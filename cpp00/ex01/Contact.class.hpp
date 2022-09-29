@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:20:18 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/09/29 16:28:54 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/09/29 17:44:11 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Contact
 		~Contact(void);
 		void	getInfo(int i);
 		void	setInfo(int i);
-		void	displayinfo(void);
+		void	displayInfo(void);
 
 	private:
 		std::string _firstName;
