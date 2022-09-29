@@ -6,17 +6,17 @@
 #    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 14:31:29 by cben-bar          #+#    #+#              #
-#    Updated: 2022/09/28 14:31:37 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/09/29 16:03:23 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	megaphone
 
-PATH_OBJS	=	./.OBJS/
+DIR_OBJS	=	./.OBJS/
 
 SRC			= 	megaphone.cpp
 
-OBJS		=	$(addprefix $(PATH_OBJS), $(SRC:.cpp=.o))
+OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
 CPPC		=	c++
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
@@ -27,15 +27,15 @@ all :		$(NAME)
 $(NAME) :	$(OBJS)
 			$(CPPC) $(OBJS) -o $(NAME)
 
-$(PATH_OBJS)%.o :	%.cpp
-					@mkdir -p $(PATH_OBJS)
+$(DIR_OBJS)%.o :	%.cpp
+					@mkdir -p $(DIR_OBJS)
 					$(CPPC) $(CPPFLAGS) -c $< -o $@
 
 clean :
-			$(RM) $(PATH_OBJS)
+			$(RM) $(DIR_OBJS)
 
 fclean :		
-			$(RM) $(PATH_OBJS) $(NAME)
+			$(RM) $(DIR_OBJS) $(NAME)
 			
 re :		fclean all
 			
