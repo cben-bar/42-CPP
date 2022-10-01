@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 15:47:49 by cben-bar          #+#    #+#              #
-#    Updated: 2022/09/29 16:29:02 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/10/01 15:39:41 by beni             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,7 @@ DIR_OBJS	=	./.OBJS/
 INCLUDES	=	Phonebook.class.hpp	\
 				Contact.class.hpp
 
-SRC			=	phonebook.cpp	\
-				contacts.cpp	\
-				main.cpp
+SRC			=	main.cpp
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
@@ -32,7 +30,7 @@ all :		$(NAME)
 $(NAME) :	$(OBJS)
 			$(CPPC) $(OBJS) -o $(NAME)
 
-$(PATH_OBJS)%.o :	%.cpp $(INCLUDES)
+$(DIR_OBJS)%.o :	%.cpp $(INCLUDES)
 					@mkdir -p $(DIR_OBJS)
 					$(CPPC) $(CPPFLAGS) -c $< -o $@
 

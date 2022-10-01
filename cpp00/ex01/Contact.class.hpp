@@ -3,31 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 16:20:18 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/09/29 17:44:11 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2022/10/01 15:13:31 by beni              #+#    #+#             */
+/*   Updated: 2022/10/01 15:32:42 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-# define CONTACT_H
-#include <string>
-#include <iomanip>
+#ifndef CONTACT_CLASS_HPP
+#define CONTACT_CLASS_HPP
+
+#include <iostream>
 
 class Contact
 {
-	public:
-		Contact(void);
-		~Contact(void);
-		void	getInfo(int i);
-		void	setInfo(int i);
-		void	displayInfo(void);
-
-	private:
-		std::string _firstName;
+    public:
+        Contact();
+        ~Contact();
+    
+    private:
+        std::string _firstName;
 		std::string _lastName;
 		std::string _nickName;
 		std::string _phoneNumber;
 		std::string _darkestSecret;
-}
+};
+
+#endif

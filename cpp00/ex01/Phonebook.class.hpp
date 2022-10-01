@@ -3,30 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 16:11:49 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/09/29 16:28:58 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2022/10/01 15:14:33 by beni              #+#    #+#             */
+/*   Updated: 2022/10/01 15:30:38 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#ifndef PHONEBOOK_CLASS_HPP
+#define PHONEBOOK_CLASS_HPP
+
 #include <iostream>
 #include <string>
-#include <iomanip>
 #include "Contact.class.hpp"
 
 class Phonebook
 {
-		public:
-			Phonebook(void);
-			~Phonebook(void);
-			void	setContact(int i);
-			void	getContact(int i) const;
-
-		private:
-			Contact contact[8];
-}
+    public:
+        Phonebook();
+        ~Phonebook();
+    
+    private:
+        Contact _contact[8];
+};
 
 #endif
