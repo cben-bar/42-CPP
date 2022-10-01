@@ -6,7 +6,7 @@
 #    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 15:47:49 by cben-bar          #+#    #+#              #
-#    Updated: 2022/10/01 15:39:41 by beni             ###   ########.fr        #
+#    Updated: 2022/10/01 16:17:16 by beni             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ DIR_OBJS	=	./.OBJS/
 INCLUDES	=	Phonebook.class.hpp	\
 				Contact.class.hpp
 
-SRC			=	main.cpp
+SRC			=	main.cpp			\
+				Contact.cpp			\
+				Phonebook.cpp
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 

@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 15:14:33 by beni              #+#    #+#             */
-/*   Updated: 2022/10/01 16:44:42 by beni             ###   ########.fr       */
+/*   Created: 2022/10/01 16:12:10 by beni              #+#    #+#             */
+/*   Updated: 2022/10/01 16:20:09 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-#define PHONEBOOK_CLASS_HPP
+#include "Phonebook.class.hpp"
 
-#include <iostream>
-#include <string>
-#include "Contact.class.hpp"
-
-class Phonebook
+Phonebook::Phonebook()
 {
-    public:
-        Phonebook();
-        ~Phonebook();
-        
-    
-    private:
-        Contact _contact[8];
-};
+    return ;
+}
 
-#endif
+Phonebook::~Phonebook()
+{
+    return ;
+}

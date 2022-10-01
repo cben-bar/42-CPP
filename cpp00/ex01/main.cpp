@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:33:10 by beni              #+#    #+#             */
-/*   Updated: 2022/10/01 15:58:10 by beni             ###   ########.fr       */
+/*   Updated: 2022/10/01 16:41:14 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,31 @@ void printCmd()
 int main(int ac, char **av)
 {
     (void)av;
-    std::string input;
+    Phonebook   Phonebook;
+    std::string buffer;
+    int         added;
+    int         i;
+
+    added = 0;
+    i = 0;
     if (ac != 1)
     {
         std::cout << "No argument needed" << std::endl;
         return (0);
     }
-    while (1)
+    while (1 && !std::cin.eof())
     {
         printCmd();
-        std::getline(std::cin, input);
-        if (input == "ADD")
+        std::getline(std::cin, buffer);
+        if (buffer == "ADD")
         {
             //kekipass pr ADD?
         }
-        else if (input == "SEARCH")
+        else if (buffer == "SEARCH")
         {
             //kekipass pr SEARCH?
         }
-        else if (input == "EXIT")
+        else if (buffer == "EXIT")
             return (0);
     }
     return (0);
