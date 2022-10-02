@@ -6,26 +6,12 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:33:10 by beni              #+#    #+#             */
-/*   Updated: 2022/10/02 21:35:46 by beni             ###   ########.fr       */
+/*   Updated: 2022/10/02 21:39:40 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.class.hpp"
 #include "Phonebook.class.hpp"
-
-/*int	isDigit( std::string fieldIndex )
-{
-	int			i;
-
-	i = 0;
-	while (fieldIndex[i])
-	{
-		if (!isdigit(fieldIndex[i]))
-			return (1);
-		i++;
-	}
-	return (0);
-}*/
 
 int     isDigit(std::string indexInput)
 {
