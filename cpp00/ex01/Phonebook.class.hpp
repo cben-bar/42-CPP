@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:14:33 by beni              #+#    #+#             */
-/*   Updated: 2022/10/01 16:44:42 by beni             ###   ########.fr       */
+/*   Updated: 2022/10/02 18:23:13 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define PHONEBOOK_CLASS_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include "Contact.class.hpp"
 
@@ -22,7 +23,9 @@ class Phonebook
     public:
         Phonebook();
         ~Phonebook();
-        
+        void    setContact(int i);
+        void    getContact(int i) const;
+        void    getDetContact(int i) const;
     
     private:
         Contact _contact[8];

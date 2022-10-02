@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:12:10 by beni              #+#    #+#             */
-/*   Updated: 2022/10/01 16:20:09 by beni             ###   ########.fr       */
+/*   Updated: 2022/10/02 21:37:35 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,19 @@ Phonebook::Phonebook()
 Phonebook::~Phonebook()
 {
     return ;
+}
+
+void    Phonebook::setContact(int i)
+{
+    this->_contact[i].setData();
+}
+
+void    Phonebook::getContact(int i) const
+{
+    this->_contact[i].getData(i);
+}
+
+void    Phonebook::getDetContact(int i) const
+{
+    this->_contact[i].printData();
 }
