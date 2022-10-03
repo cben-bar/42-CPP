@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 14:31:29 by cben-bar          #+#    #+#              #
-#    Updated: 2022/09/29 16:03:23 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/10/03 12:44:43 by beni             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC			= 	megaphone.cpp
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
-CPPC		=	c++
+CPPC		=	c+
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
 
