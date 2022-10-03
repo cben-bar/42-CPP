@@ -6,11 +6,11 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:12:10 by beni              #+#    #+#             */
-/*   Updated: 2022/10/03 10:21:00 by beni             ###   ########.fr       */
+/*   Updated: 2022/10/03 12:30:38 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.class.hpp"
+#include "Phonebook.hpp"
 
 Phonebook::Phonebook()
 {

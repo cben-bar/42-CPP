@@ -6,7 +6,7 @@
 #    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 15:47:49 by cben-bar          #+#    #+#              #
-#    Updated: 2022/10/01 16:17:16 by beni             ###   ########.fr        #
+#    Updated: 2022/10/03 12:30:26 by beni             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	Phonebook.class.hpp	\
-				Contact.class.hpp
+INCLUDES	=	Phonebook.hpp	\
+				Contact.hpp
 
 SRC			=	main.cpp			\
 				Contact.cpp			\

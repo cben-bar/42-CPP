@@ -6,11 +6,11 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:09:55 by beni              #+#    #+#             */
-/*   Updated: 2022/10/03 10:48:47 by beni             ###   ########.fr       */
+/*   Updated: 2022/10/03 12:27:39 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
+#include "Contact.hpp"
 
 Contact::Contact()
 {

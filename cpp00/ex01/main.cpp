@@ -6,12 +6,12 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:33:10 by beni              #+#    #+#             */
-/*   Updated: 2022/10/03 10:22:58 by beni             ###   ########.fr       */
+/*   Updated: 2022/10/03 12:29:04 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
-#include "Phonebook.class.hpp"
+#include "Contact.hpp"
+#include "Phonebook.hpp"
 
 int     isDigit(std::string indexInput)
 {

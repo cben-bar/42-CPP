@@ -6,12 +6,12 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:13:31 by beni              #+#    #+#             */
-/*   Updated: 2022/10/03 10:39:41 by beni             ###   ########.fr       */
+/*   Updated: 2022/10/03 12:27:11 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-#define CONTACT_CLASS_HPP
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <iostream>
 #include <iomanip>
