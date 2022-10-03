@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:13:31 by beni              #+#    #+#             */
-/*   Updated: 2022/10/02 17:54:46 by beni             ###   ########.fr       */
+/*   Updated: 2022/10/03 10:39:41 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_CLASS_HPP
 
 #include <iostream>
+#include <iomanip>
 
 class Contact
 {
@@ -21,8 +22,8 @@ class Contact
         Contact();
         ~Contact();
         void    setData();
-        //void    getData(int i) const;
-        //void    printData() const;
+        void    getData(int i) const;
+        void    printData() const;
 
     private:
         std::string _firstName;

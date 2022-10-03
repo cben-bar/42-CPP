@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:33:10 by beni              #+#    #+#             */
-/*   Updated: 2022/10/02 21:39:40 by beni             ###   ########.fr       */
+/*   Updated: 2022/10/03 10:22:58 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int main(int ac, char **av)
             std::cout << std::endl;
             std::cout << "Choose an index :";
             index = indexer();
+            Phonebook.getDetContact(index);
         }
         else if (buffer == "EXIT")
             return (0);
