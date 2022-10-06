@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 13:45:08 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/10/06 16:51:05 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2022/10/06 15:58:11 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/10/06 16:33:19 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie*	zombieHorde(int N, std::string name)
 {
-    this->_name = name;
-    std::cout << "Zombie " << this->_name << " is born" << std::endl;
-    return ;
-}
+	int	i;
 
-Zombie::~Zombie()
-{
-    std::cout << "Zombie " << this->_name << " died" << std::endl;
-    return ;
-}
+	i = 0;
+	if (N < 0)
+		return (0);
+	Zombie* newZombieHorde = new Zombie[N];
+	while (i < N)
+	{
+		newZombieHorde[i].setName(name);
+		std::cout << name << " is born" << std::endl;
+		i++;
+	}
 
-void    Zombie::announce()
-{
-    std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return (newZombieHorde);
 }

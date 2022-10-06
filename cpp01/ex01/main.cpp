@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 13:45:08 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/10/06 16:51:05 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2022/10/06 16:04:47 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/10/06 16:49:12 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+int main()
 {
-    this->_name = name;
-    std::cout << "Zombie " << this->_name << " is born" << std::endl;
-    return ;
-}
+	Zombie* zombieH;
+	int		N;
+	int		i;
 
-Zombie::~Zombie()
-{
-    std::cout << "Zombie " << this->_name << " died" << std::endl;
-    return ;
-}
+	N = 4;
+	i = 0;
+	zombieH = zombieHorde(4, "Jean-Jacques");
 
-void    Zombie::announce()
-{
-    std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	while(i < N)
+	{
+		zombieH[i].announce();
+		i++;
+	}
+	i = 0;
+	delete [] zombieH;
+	return (0);
 }
