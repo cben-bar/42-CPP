@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
+#    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/29 15:47:49 by cben-bar          #+#    #+#              #
-#    Updated: 2022/10/03 12:58:27 by beni             ###   ########.fr        #
+#    Created: 2022/10/06 11:47:37 by cben-bar          #+#    #+#              #
+#    Updated: 2022/10/06 11:47:38 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ INCLUDES	=	Zombie.hpp	\
 
 SRC			=	main.cpp			\
 				Zombie.cpp			\
+				newZombie.cpp		\
+				randomChump.cpp		\
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
