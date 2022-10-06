@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:47:59 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/10/06 11:48:01 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/10/06 13:54:07 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class Zombie
 {
     public:
-        Zombie();
+        Zombie(std::string name);
         ~Zombie();
         void    announce();
 

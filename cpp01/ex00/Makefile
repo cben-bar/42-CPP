@@ -6,11 +6,11 @@
 #    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 11:47:37 by cben-bar          #+#    #+#              #
-#    Updated: 2022/10/06 11:47:38 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/10/06 13:59:18 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-  NAME		=	phonebook
+  NAME		=	zombie_factory
 
 DIR_OBJS	=	./.OBJS/
 
