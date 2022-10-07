@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:31:19 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/10/07 12:11:21 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/10/07 13:44:46 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 Weapon::Weapon()
 {
+	return ;
+}
+
+Weapon::Weapon(std::string type)
+{
+	this->_type = type;
+	std::cout << type << " is create" << std::endl;
 	return ;
 }
 
