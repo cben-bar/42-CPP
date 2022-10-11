@@ -6,11 +6,11 @@
 #    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 15:55:21 by cben-bar          #+#    #+#              #
-#    Updated: 2022/10/06 15:55:24 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/10/11 14:35:50 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-  NAME		=	zombie_factory
+  NAME		=	moar_brainz
 
 DIR_OBJS	=	./.OBJS/
 
