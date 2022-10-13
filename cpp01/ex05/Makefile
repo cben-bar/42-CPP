@@ -5,24 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/07 13:55:32 by cben-bar          #+#    #+#              #
-#    Updated: 2022/10/07 13:55:50 by cben-bar         ###   ########lyon.fr    #
+#    Created: 2022/10/13 14:18:00 by cben-bar          #+#    #+#              #
+#    Updated: 2022/10/13 14:18:02 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-  NAME		=	harl
+  NAME		=	Harl_2.0
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	Weapon.hpp	\
-				HumanA.hpp	\
-				HumanB.hpp
+INCLUDES	=	Harl.hpp
 
 SRC			=	main.cpp	\
-				Weapon.cpp	\
-				HumanA.cpp	\
-				HumanB.cpp
-
+				Harl.cpp
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
