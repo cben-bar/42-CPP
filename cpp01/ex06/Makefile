@@ -6,11 +6,11 @@
 #    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 14:18:00 by cben-bar          #+#    #+#              #
-#    Updated: 2022/10/13 17:05:33 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/10/13 17:13:53 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-  NAME		=	Harl_filter
+  NAME		=	HarlFilter
 
 DIR_OBJS	=	./.OBJS/
 
