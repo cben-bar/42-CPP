@@ -6,13 +6,14 @@
 /*   By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:25:35 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/10/13 14:30:02 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/10/13 14:36:06 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_HPP
 #define HARL_HPP
 #include <iomanip>
+#include <iostream>
 
 class Harl
 {
