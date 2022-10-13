@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:25:35 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/10/13 14:36:06 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/10/13 17:00:07 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@ class Harl
 		void	complain(std::string level);
 		
 	private:
-		void	debug();
-		void	info();
-		void	warning();
-		void	error();
+		void	_debug();
+		void	_info();
+		void	_warning();
+		void	_error();
+		void	(Harl::*_f[4])();
+		std::string	_level[4];
 
 };
 

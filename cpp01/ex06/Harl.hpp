@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 14:32:04 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/10/13 17:03:07 by cben-bar         ###   ########lyon.fr   */
+/*   Created: 2022/10/13 17:08:41 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/10/13 17:10:53 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int main(int ac, char **av)
+#include <iostream>
+
+class Harl
 {
+	public:
+		Harl();
+		~Harl();
 
-	if (ac != 2)
-	{
-		std::cout << "This programm takes an argument: DEBUG, INFO, WARNING or ERROR" << std::endl;
-		return (0);
-	}
-	else
-	{
-		Harl		grumpy;
-		std::string	level;
+	private:
+};
 
-		level = av[1];
-		grumpy.complain(level);
-	}
-	return (0);
-}
+#endif
