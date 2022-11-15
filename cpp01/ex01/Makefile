@@ -6,7 +6,7 @@
 #    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 15:55:21 by cben-bar          #+#    #+#              #
-#    Updated: 2022/10/11 14:35:50 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/10/19 18:01:24 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ SRC			=	main.cpp			\
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
 CPPC		=	c++
+
 CPPFLAGS	=	-Wall -Wextra -Werror -std=c++98
+
 RM			=	rm -rf
 
 all :		$(NAME)
