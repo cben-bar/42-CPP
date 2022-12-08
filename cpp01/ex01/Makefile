@@ -6,11 +6,11 @@
 #    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 15:55:21 by cben-bar          #+#    #+#              #
-#    Updated: 2022/10/19 18:01:24 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/12/07 17:12:47 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-  NAME		=	moar_brainz
+  NAME		=	Moar_brainz
 
 DIR_OBJS	=	./.OBJS/
 

@@ -6,11 +6,11 @@
 #    By: cben-bar <cben-bar@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 11:47:37 by cben-bar          #+#    #+#              #
-#    Updated: 2022/10/19 18:01:34 by cben-bar         ###   ########lyon.fr    #
+#    Updated: 2022/12/07 17:10:35 by cben-bar         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-  NAME		=	zombie_factory
+  NAME		=	BraiiiiiiinnnzzzZ
 
 DIR_OBJS	=	./.OBJS/
 
