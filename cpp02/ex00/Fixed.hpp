@@ -6,14 +6,14 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:49:03 by beni              #+#    #+#             */
-/*   Updated: 2022/12/12 16:49:17 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/05 13:39:54 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-#include "iostream"
+#include <iostream>
 
 class Fixed
 {
@@ -28,7 +28,7 @@ class Fixed
 
     private:
         int                 _n;
-        static const int    _bit = 8;
+        static const int    _bits = 8;
 };
 
 #endif
