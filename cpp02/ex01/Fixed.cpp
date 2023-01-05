@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:21:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/05 14:01:10 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/05 14:36:17 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,35 +24,35 @@ Fixed::~Fixed()
     return ;
 }
 
-Fixed::Fixed(int const to_be_converted)    //converts to the corresponding fixed-point value..convertit l'entier en parametre en virgule fixe.
+Fixed::Fixed(const int to_be_converted)    //converts to the corresponding fixed-point value..convertit l'entier en parametre en virgule fixe.
 {
     std::cout << "Int constructor called" << std::endl;
     this->setRawBits(std::roundf(to_be_converted * (1 << this->_bits)));
     return ;
 }
 
-Fixed::Fixed(float const to_be_converted)   //converts to the corresponding fixed-point value..convertit le flottant en parametre en virgule fixe
+Fixed::Fixed(const float to_be_converted)   //converts to the corresponding fixed-point value..convertit le flottant en parametre en virgule fixe
 {
     std::cout << "Float constructor called" << std::endl;
     this->setRawBits(std::roundf(to_be_converted * (1 << this->_bits)));
     return ;
 }
 
-Fixed::Fixed(Fixed const & origin)
+Fixed::Fixed(const Fixed & origin)
 {
     std::cout << "Copy constructor called" << std::endl;
     *this = origin;
     return ;
 }
 
-Fixed & Fixed::operator=(Fixed const & rhs)
+Fixed & Fixed::operator=(const Fixed & rhs)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     this->_n = rhs.getRawBits();
     return (*this);
 }
 
-std::ostream & operator<<(std::ostream & o, Fixed const & rhs)  //inserts floating-point representation of the fixed-point into the output stream object passed as parameter
+std::ostream & operator<<(std::ostream & o, const Fixed & rhs)  //inserts floating-point representation of the fixed-point into the output stream object passed as parameter
 {
     return (o << rhs.toFloat());
 }
@@ -62,7 +62,7 @@ int Fixed::getRawBits() const
     return (this->_n);
 }
 
-void Fixed::setRawBits(int const raw)
+void Fixed::setRawBits(const int raw)
 {
     this->_n = raw;
     return ;

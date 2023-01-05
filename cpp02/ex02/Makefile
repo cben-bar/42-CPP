@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/12 15:07:28 by beni              #+#    #+#              #
-#    Updated: 2023/01/05 14:40:38 by beni             ###   ########.fr        #
+#    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
+#    Updated: 2023/01/05 14:41:49 by beni             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	My_First_Class_in_Orthodox_Canonical_Form
+NAME		=	Now_we_are_talking
 
 DIR_OBJS	=	./.OBJS/
 

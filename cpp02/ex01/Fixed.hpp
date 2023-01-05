@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:49:03 by beni              #+#    #+#             */
-/*   Updated: 2023/01/05 13:39:05 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/05 14:34:23 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ class Fixed
     public:
         Fixed();
         ~Fixed();
-        Fixed(int const to_be_converted);
-        Fixed(float const to_be_converted);
-        Fixed(Fixed const & origin);
-        Fixed & operator=(Fixed const & rhs);
-        int getRawBits() const;
-        void setRawBits(int const raw);
-        float toFloat() const;
-        int toInt() const;
+        Fixed(const int to_be_converted);
+        Fixed(const float to_be_converted);
+        Fixed(const Fixed & origin);
+        Fixed & operator=(const Fixed & rhs);
+        int     getRawBits() const;
+        void    setRawBits(const int raw);
+        float   toFloat() const;
+        int     toInt() const;
         
 
     private:
@@ -36,7 +36,7 @@ class Fixed
         static const int    _bits = 8;
 };
 
-std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
+std::ostream & operator<<(std::ostream & o, const Fixed & rhs);
 
 #endif
 
