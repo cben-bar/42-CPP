@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:21:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/05 15:40:35 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/06 10:52:29 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,28 @@
 
 Fixed::Fixed(): _n(0)
 {
-    std::cout << "Default constructor called" << std::endl;
     return ;
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
     return ;
 }
 
 Fixed::Fixed(int const to_be_converted)    //converts to the corresponding fixed-point value..convertit l'entier en parametre en virgule fixe.
 {
-    std::cout << "Int constructor called" << std::endl;
     this->setRawBits(std::roundf(to_be_converted * (1 << this->_bits)));
     return ;
 }
 
 Fixed::Fixed(float const to_be_converted)   //converts to the corresponding fixed-point value..convertit le flottant en parametre en virgule fixe
 {
-    std::cout << "Float constructor called" << std::endl;
     this->setRawBits(std::roundf(to_be_converted * (1 << this->_bits)));
     return ;
 }
 
 Fixed::Fixed(Fixed const & origin)
 {
-    std::cout << "Copy constructor called" << std::endl;
     *this = origin;
     return ;
 }
@@ -51,7 +46,6 @@ Fixed::Fixed(Fixed const & origin)
 
 Fixed   &Fixed::operator=(Fixed const & rhs)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
     this->_n = rhs.getRawBits();
     return (*this);
 }
@@ -94,6 +88,34 @@ int Fixed::toInt( void ) const  //that converts the fixed-point value to an inte
 
     return (converted_value_i = std::roundf(this->_n / (1 << this->_bits)));
 
+}
+
+Fixed   &Fixed::min(Fixed &n1, Fixed &n2)
+{
+    if (n1 < n2)
+        return (n1);
+    return (n2);
+}
+
+const Fixed &Fixed::min(const Fixed &n1, const Fixed &n2)
+{
+    if (n1 < n2)
+        return (n1);
+    return (n2);
+}
+
+Fixed   &Fixed::max(Fixed &n1, Fixed &n2)
+{
+    if (n1 > n2)
+        return (n1);
+    return (n2);
+}
+
+const Fixed &Fixed::max(const Fixed &n1, const Fixed &n2)
+{
+    if (n1 > n2)
+        return (n1);
+    return (n2);
 }
 
 ///////////////////////////////////////
@@ -148,40 +170,62 @@ bool    Fixed::operator!=(const Fixed &rhs) const
 
 Fixed   Fixed::operator+(const Fixed &rhs) const
 {
+    float   add;
 
+    return (Fixed(add = this->toFloat() + rhs.toFloat()));
 }
 
 Fixed   Fixed::operator-(const Fixed &rhs) const
 {
+    float   sub;
     
+    return (Fixed(sub = this->toFloat() - rhs.toFloat()));
 }
 
 Fixed   Fixed::operator*(const Fixed &rhs) const
 {
-    
+    float   mul;
+
+    return (Fixed(mul = this->toFloat() * rhs.toFloat()));
 }
 
 Fixed   Fixed::operator/(const Fixed &rhs) const
 {
+    float   div;
+
+    return (Fixed(div = this->toFloat() / rhs.toFloat()));
+}
+
+Fixed   &Fixed::operator++()
+{
+    this->_n++;
+
+    return (*this);
+}
+
+Fixed   Fixed::operator++(int n)
+{
+    Fixed   ret = (*this);
     
+    (void)n;
+    ++(*this);
+
+    return (ret);    
 }
 
-Fixed   &Fixed::operator++()        //pre-increment
+Fixed   &Fixed::operator--()
 {
+    this->_n--;
 
+    return (*this);
 }
 
-Fixed   Fixed::operator++(int n)    //post-increment
+Fixed   Fixed::operator--(int n)
 {
+    Fixed   ret = (*this);
+    
+    (void)n;
+    --(*this);
 
-}
-
-Fixed   &Fixed::operator--()        //pre-decrement
-{
-
-}
-
-Fixed   Fixed::operator--(int n)    //post-decrement
-{
-
+    return (ret);
 }
