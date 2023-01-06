@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:21:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/06 10:52:29 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/06 10:56:27 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,6 +195,10 @@ Fixed   Fixed::operator/(const Fixed &rhs) const
 
     return (Fixed(div = this->toFloat() / rhs.toFloat()));
 }
+
+///////////////////////////////////////
+//*/ */ */INCREMENT-DECREMENT/* /* /*//
+///////////////////////////////////////
 
 Fixed   &Fixed::operator++()
 {
