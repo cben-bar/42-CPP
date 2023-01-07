@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:49:03 by beni              #+#    #+#             */
-/*   Updated: 2023/01/05 15:39:41 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/07 15:12:42 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,3 @@ class Fixed
 std::ostream    &operator<<(std::ostream & o, Fixed const & rhs);
 
 #endif
-
