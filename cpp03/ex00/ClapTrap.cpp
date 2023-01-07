@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:34:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/07 19:45:09 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/07 19:50:48 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
     {
         if (this->_hitPoints > 10)
             this->_hitPoints = 10;
-        std::cout << PASTEL_GREEN  << "ClapTrap " << this->_name << " had " << this->_hitPoints << " hit point(s)."<< std::endl;
+        std::cout << PASTEL_GREEN  << "ClapTrap " << this->_name << " had " << this->_hitPoints << " hit point(s). But that was before.."<< std::endl;
         this->_hitPoints += amount;
         if (this->_hitPoints > 10)
             this->_hitPoints = 10;
