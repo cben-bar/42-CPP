@@ -6,7 +6,7 @@
 #    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/01/07 14:28:10 by beni             ###   ########.fr        #
+#    Updated: 2023/01/07 17:09:57 by beni             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ NAME		=	Aaaaand...OPEN!
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	Fixed.hpp
+INCLUDES	=	ClapTrap.hpp
 
 SRC			=	main.cpp	\
-				Fixed.cpp
+				ClapTrap.cpp
 
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
