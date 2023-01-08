@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:34:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/07 19:50:48 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/08 12:02:28 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void    ClapTrap::attack(const std::string &target)
         std::cout << PASTEL_ORANGE << "ClapTrap " << this->_name << " can't attack, " << this->_name << " doesn't have enough energy point." << std::endl;
     else
     {
-        std::cout << PASTEL_PINK << "ClapTrap " << this->_name << "attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+        std::cout << PASTEL_PINK << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
         this->_energyPoints--;
     }       
 }
