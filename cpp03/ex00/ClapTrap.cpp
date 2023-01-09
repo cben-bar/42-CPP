@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:34:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/08 12:02:28 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/09 10:30:03 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@
 
 ClapTrap::ClapTrap(): _name("Undefined"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "Default constructor called" <<std::endl;
+    std::cout << "Default constructor called for " << this->_name << "." << std::endl;
     return;
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << GREY << "Constructor called with name: " << this->_name <<std::endl;
+    std::cout << GREY << "Constructor called with name: " << this->_name << "." << std::endl;
     return;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &origin)
 {
     *this = origin;
-    std::cout << STORM_BLUE << "Copy constructor called with name: " << this->_name << std::endl;
+    std::cout << STORM_BLUE << "Copy constructor called with name: " << this->_name << "." << std::endl;
     return;
 }
 
@@ -45,7 +45,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &origin)
     this->_hitPoints = origin.getHitPoint();
     this->_energyPoints = origin.getEnergyPoint();
     this->_attackDamage = origin.getAttackDamage();
-    std::cout << SOFT_GREEN << "Copy assignment operator called with name: " << this->_name << std::endl;
+    std::cout << SOFT_GREEN << "Copy assignment operator called with name: " << this->_name << "." << std::endl;
     return (*this);
 }
 
@@ -55,7 +55,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &origin)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << STRIKETHROUGH << "Destructor called" << std::endl;
+    std::cout << OCEAN_BLUE << "Destructor called for " << this->_name << "." << std::endl;
     return;
 }
 
@@ -106,7 +106,7 @@ void    ClapTrap::takeDamage(unsigned int amount)
         std::cout << BLOOD_RED << "ClapTrap " << this->_name << " is already dead.." << std::endl;
     else
     {
-        std::cout << MAGENTA << this->_name << " with " << this->_hitPoints << " hit point(s), take " << amount << " damage point(s)." << std::endl;
+        std::cout << SEA_GREEN << "ClapTrap" << this->_name << " with " << this->_hitPoints << " hit point(s), take " << amount << " damage point(s)." << std::endl;
         this->_hitPoints -= amount;
         if (this->_hitPoints < 0)
             this->_hitPoints = 0;
@@ -120,9 +120,9 @@ void    ClapTrap::takeDamage(unsigned int amount)
 void    ClapTrap::beRepaired(unsigned int amount)
 {
     if (this->_hitPoints <= 0)
-        std::cout << CYAN << "ClapTrap " << this->_name << "can't be repaired, " << this->_name << " is dead.." << std::endl;
+        std::cout << CYAN << "ClapTrap " << this->_name << " can't be repaired, " << this->_name << " is dead.." << std::endl;
     if (this->_energyPoints <= 0)
-        std::cout << BLUE << "ClapTrap " << this->_name << "can't be repaired, " << this->_name << " doesn't have enough energy.." << std::endl;
+        std::cout << BLUE << "ClapTrap " << this->_name << " can't be repaired, " << this->_name << " doesn't have enough energy.." << std::endl;
     else
     {
         if (this->_hitPoints > 10)

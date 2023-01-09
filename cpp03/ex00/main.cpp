@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 17:08:54 by beni              #+#    #+#             */
-/*   Updated: 2023/01/08 15:49:52 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/09 10:33:16 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,21 @@
 
 int main(void)
 {
-    ClapTrap    whoIAm;
-    ClapTrap    marin("Marin");
-    ClapTrap    anemone("Anemone");
-    ClapTrap    nemo(marin);
-    ClapTrap    Dory = anemone;
-    
-    // std::cout << std::endl;
-    // whoIAm.attack("marin");
-    // std::cout << std::endl;
-    // marin.takeDamage(3);
-    // std::cout << std::endl;
-    // marin.beRepaired(1);
-    std::cout << std::endl;
-    marin.attack("nemo");//
-    std::cout << std::endl;
-    nemo.attack("marin");//
-    // std::cout << std::endl;
-    // nemo.beRepaired(100);
-    // std::cout << std::endl;
-    // nemo.attack("Dory");
-    
+    ClapTrap    noName;
+    ClapTrap    whoIAm("dory");
+    ClapTrap    marin(whoIAm);
+    ClapTrap    nemo = marin;
+
+    marin.attack("noName");
+    for (int i = 0; i < 10; i++)
+        whoIAm.attack("nemo");
+    nemo.takeDamage(4);
+    nemo.beRepaired(2);
+    nemo.takeDamage(20);
+    nemo.beRepaired(1);
+    marin.attack("whoIAm");
+    whoIAm.takeDamage(20);
+    whoIAm.beRepaired(3);
+
     return (0);
 }

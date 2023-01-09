@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:34:13 by beni              #+#    #+#             */
-/*   Updated: 2023/01/07 19:48:31 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/09 10:04:36 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 
 #define STRIKETHROUGH   "\x1B[9m"
+#define OCEAN_BLUE      "\x1b[38;5;19m"
 #define GREY            "\x1B[30m"
 #define BLUE            "\x1B[34m"
 #define STORM_BLUE     "\x1b[38;5;12m"
