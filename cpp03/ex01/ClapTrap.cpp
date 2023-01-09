@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:34:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/09 15:26:43 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/09 15:25:50 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@
 
 ClapTrap::ClapTrap(): _name("Undefined"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << "Default constructor called for " << this->_name << "." << std::endl;
+    std::cout << "ClapTrap default constructor called for " << this->_name << "." << std::endl;
     return;
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-    std::cout << GREY << "Constructor called with name: " << this->_name << "." << std::endl;
+    std::cout << GREY << "ClapTrap constructor called with name: " << this->_name << "." << std::endl;
     return;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &origin)
 {
     *this = origin;
-    std::cout << STORM_BLUE << "Copy constructor called with name: " << this->_name << "." << std::endl;
+    std::cout << STORM_BLUE << "ClapTrap copy constructor called with name: " << this->_name << "." << std::endl;
     return;
 }
 
@@ -45,7 +45,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &origin)
     this->_hitPoints = origin.getHitPoint();
     this->_energyPoints = origin.getEnergyPoint();
     this->_attackDamage = origin.getAttackDamage();
-    std::cout << DARK_BLUE << "Copy assignment operator called with name: " << this->_name << "." << std::endl;
+    std::cout << DARK_BLUE << "ClapTrap copy assignment operator called with name: " << this->_name << "." << std::endl;
     return (*this);
 }
 
@@ -55,7 +55,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &origin)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << OCEAN_BLUE << "Destructor called for " << this->_name << "." << std::endl;
+    std::cout << OCEAN_BLUE << "ClapTrap destructor called for " << this->_name << "." << std::endl;
     return;
 }
 
@@ -81,6 +81,30 @@ int         ClapTrap::getEnergyPoint() const
 int         ClapTrap::getAttackDamage() const
 {
     return (this->_attackDamage);
+}
+
+///////////////////////////////////////
+//*/ */ */ */   SETTERS   /* /* /* /*//
+///////////////////////////////////////
+
+void        ClapTrap::setName(std::string name)
+{
+    this->_name = name;
+}
+
+void        ClapTrap::setHitPoints(int hitPoints)
+{
+    this->_hitPoints = hitPoints;
+}
+
+void        ClapTrap::setEnergyPoints(int energyPoints)
+{
+    this->_energyPoints = energyPoints;
+}
+
+void        ClapTrap::setAttackDamage(int attackDamage)
+{
+    this->_attackDamage = attackDamage;
 }
 
 ///////////////////////////////////////
@@ -120,18 +144,18 @@ void    ClapTrap::takeDamage(unsigned int amount)
 void    ClapTrap::beRepaired(unsigned int amount)
 {
     if (this->_hitPoints <= 0)
-        std::cout << CYAN << "ClapTrap " << this->_name << " can't be repaired, " << this->_name << " is dead.." << std::endl;
+        std::cout << CYAN << this->_name << " can't be repaired, " << this->_name << " is dead.." << std::endl;
     else if (this->_energyPoints <= 0)
-        std::cout << BLUE << "ClapTrap " << this->_name << " can't be repaired, " << this->_name << " doesn't have enough energy.." << std::endl;
+        std::cout << BLUE << this->_name << " can't be repaired, " << this->_name << " doesn't have enough energy.." << std::endl;
     else
     {
-        if (this->_hitPoints > 10)
-            this->_hitPoints = 10;
-        std::cout << PASTEL_GREEN  << "ClapTrap " << this->_name << " had " << this->_hitPoints << " hit point(s). But that was before.."<< std::endl;
+        if (this->_hitPoints > 100)
+            this->_hitPoints = 100;
+        std::cout << PASTEL_GREEN  << this->_name << " had " << this->_hitPoints << " hit point(s). But that was before.."<< std::endl;
         this->_hitPoints += amount;
-        if (this->_hitPoints > 10)
-            this->_hitPoints = 10;
-        std::cout << GREEN << "ClapTrap "<< this->_name << " has been repaired and now has " << this->_hitPoints << " hit points."<< std::endl;
+        if (this->_hitPoints > 100)
+            this->_hitPoints = 100;
+        std::cout << GREEN << this->_name << " has been repaired and now has " << this->_hitPoints << " hit points."<< std::endl;
         this->_energyPoints--;
     }
 }
