@@ -6,12 +6,9 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:34:13 by beni              #+#    #+#             */
-/*   Updated: 2023/01/09 13:15:31 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/09 15:40:31 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
@@ -92,5 +89,3 @@ void    ScavTrap::guardGate()
 {
     std::cout << RED << "ScavTrap " << this->_name <<  " is now in Gate keeper mode."<< std::endl;
 }
-
-#endif
