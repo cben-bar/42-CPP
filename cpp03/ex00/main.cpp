@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 17:08:54 by beni              #+#    #+#             */
-/*   Updated: 2023/01/09 10:33:16 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/10 15:47:18 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
     nemo.beRepaired(2);
     nemo.takeDamage(20);
     nemo.beRepaired(1);
-    marin.attack("whoIAm");
+    marin.attack("Dory");
     whoIAm.takeDamage(20);
     whoIAm.beRepaired(3);
 

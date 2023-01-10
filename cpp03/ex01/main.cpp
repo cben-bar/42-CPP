@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:38:53 by beni              #+#    #+#             */
-/*   Updated: 2023/01/10 15:43:54 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/10 15:54:19 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int main ()
     ScavTrap    shark("Shark");
 
     marin.setName("Marin");
-    marin.attack("noName");
+    marin.attack(noName.getName());
     for (int i = 0; i < 10; i++)
-        whoIAm.attack("nemo");
+        whoIAm.attack(nemo.getName());
     nemo.setName("Nemo");
     nemo.takeDamage(4);
     nemo.beRepaired(2);
