@@ -6,9 +6,12 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:22:05 by beni              #+#    #+#             */
-/*   Updated: 2023/01/09 13:06:44 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/10 14:50:58 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
@@ -24,3 +27,5 @@ class ScavTrap : public ClapTrap
         virtual void    attack(const std::string &target);
         void            guardGate();
 };
+
+#endif

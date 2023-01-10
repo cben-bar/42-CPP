@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:34:13 by beni              #+#    #+#             */
-/*   Updated: 2023/01/09 13:06:10 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/10 15:08:36 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 
+#define WHITE           "\x1B[37m"
 #define STRIKETHROUGH   "\x1B[9m"
 #define GREY            "\x1B[30m"
 #define DARK_BLUE       "\x1b[38;5;4m"
@@ -28,6 +29,10 @@
 #define SOFT_GREEN      "\x1b[38;5;6m"
 #define SEA_GREEN       "\x1b[38;5;6m"
 #define PASTEL_GREEN    "\x1b[38;5;159m"
+#define FLOWER_GREEN    "\x1b[38;5;46m"
+#define FLUO_GREEN      "\x1b[38;5;46m"
+#define PINE_GREEN      "\x1b[38;5;28m"
+#define POOL_GREEN      "\x1b[38;5;50m"
 #define RED             "\x1B[31m"
 #define BLOOD_RED       "\x1b[38;5;125m"
 #define YELLOW          "\x1B[33m"
@@ -35,6 +40,9 @@
 #define MAGENTA         "\x1b[35m"
 #define PASTEL_PINK     "\x1b[38;5;213m"
 #define PASTEL_PURPLE   "\x1b[38;5;147m"
+#define PURPLE          "\x1b[38;5;140m"
+#define VIOLET          "\x1b[38;5;129m"
+#define POWDERY_PINK    "\x1b[38;5;225m"
 #define PASTEL_ORANGE   "\x1b[38;5;224m"
 #define SUN             "\x1b[38;5;222m"
 #define TAN             "\x1b[38;5;172m"

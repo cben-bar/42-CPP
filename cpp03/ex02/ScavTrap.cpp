@@ -6,12 +6,9 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:34:13 by beni              #+#    #+#             */
-/*   Updated: 2023/01/09 13:15:31 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/10 15:32:10 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
@@ -67,7 +64,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &origin)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << PARMA << "SCavTrap destructor called for " << this->_name << "." << std::endl;
+    std::cout << PARMA << "ScavTrap destructor called for " << this->_name << "." << std::endl;
     return;
 }
 
@@ -77,9 +74,9 @@ ScavTrap::~ScavTrap()
 
 void    ScavTrap::attack(const std::string &target)
 {
-if (this->_hitPoints <= 0)
+    if (this->_hitPoints <= 0)
         std::cout << PASTEL_PURPLE << "ScavTrap " << this->_name << " can't attack, " << this->_name << " doesn't have enough hit point." << std::endl;
-    if (this->_energyPoints <= 0)
+    else if (this->_energyPoints <= 0)
         std::cout << PASTEL_ORANGE << "ScavTrap " << this->_name << " can't attack, " << this->_name << " doesn't have enough energy point." << std::endl;
     else
     {
@@ -90,7 +87,10 @@ if (this->_hitPoints <= 0)
 
 void    ScavTrap::guardGate()
 {
-    std::cout << RED << "ScavTrap " << this->_name <<  " is now in Gate keeper mode."<< std::endl;
+    if (this->_hitPoints <= 0)
+        std::cout << PASTEL_PURPLE << "ScavTrap " << this->_name << "  doesn't have enough hit point to get into Gate keeper mode." << std::endl;
+    else if (this->_energyPoints <= 0)
+        std::cout << PASTEL_ORANGE << "ScavTrap " << this->_name << " doesn't have enough energy point to get into Gate keeper mode." << std::endl;
+    else
+        std::cout << RED << "ScavTrap " << this->_name <<  " is now in Gate keeper mode."<< std::endl;
 }
-
-#endif
