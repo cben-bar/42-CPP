@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:46:39 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 14:54:57 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/12 16:02:49 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public Animal
         Cat();
         Cat(const Cat &origin);
         Cat &operator=(const Cat &origin);
-        ~Cat();
+        virtual ~Cat();
         
         virtual void    makeSound() const;
 };

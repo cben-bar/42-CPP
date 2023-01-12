@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:46:39 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 14:54:36 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/12 16:01:40 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal
         Dog();
         Dog(const Dog &origin);
         Dog &operator=(const Dog &origin);
-        ~Dog();
+        virtual ~Dog();
         
         virtual void    makeSound() const;
 };

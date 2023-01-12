@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:41:19 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 14:55:05 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/12 16:02:20 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ANIMAL_HPP
 
 #include <string>
+#include <iostream>
 
 #define WHITE           "\x1B[37m"
 #define STRIKETHROUGH   "\x1B[9m"
@@ -52,7 +53,7 @@ class Animal
         Animal();
         Animal(const Animal &origin);
         Animal &operator=(const Animal &origin);
-        ~Animal();
+        virtual ~Animal();
 
         std::string     getType() const;
         
