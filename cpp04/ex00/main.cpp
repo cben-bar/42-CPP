@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:39:43 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 19:59:28 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/12 20:16:37 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,13 @@ int main()
     dumbo.makeSound();
     std::cout << std::endl;
 
-    return 0;
-}
+    std::cout << WHITE << "\t\tSUBJECT TEST WITH WRONGANIMAL" << std::endl;
+    const WrongAnimal* peta = new WrongAnimal();
+    const WrongAnimal* k = new WrongCat();
+    std::cout << WHITE << k->getType() << " " << std::endl;
+    k->makeSound();
+    peta->makeSound();
+    delete(k);
+    delete (peta);
+    return (0);
+ }
