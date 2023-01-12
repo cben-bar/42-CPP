@@ -6,15 +6,15 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:39:43 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 16:29:14 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/12 19:59:28 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-//#include "WrongAnimal.hpp"
-//#include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -56,6 +56,20 @@ int main()
     devil.makeSound();
     std::cout << WHITE << "Sound of dog (stinky)" << std::endl; 
     stinky.makeSound();
+
+    std::cout << std::endl;
+    std::cout << WHITE << "\t\tPERSONAL TEST" << std::endl;
+
+    WrongAnimal snake;
+    WrongCat    dumbo;
+    std::cout << WHITE << snake.getType() <<  ": is the type of snake" << std::endl;
+    std::cout << WHITE << dumbo.getType() <<  ": is the type of dumbo" << std::endl;
+    std::cout << std::endl;
+    std::cout << WHITE << "Sound of WrongAnimal (snake)" << std::endl; 
+    snake.makeSound();
+    std::cout << WHITE << "Sound of WrongCat (dumbo)" << std::endl; 
+    dumbo.makeSound();
+    std::cout << std::endl;
 
     return 0;
 }

@@ -6,7 +6,7 @@
 #    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/01/12 15:08:11 by beni             ###   ########.fr        #
+#    Updated: 2023/01/12 19:54:11 by beni             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,15 +17,15 @@ DIR_OBJS	=	./.OBJS/
 INCLUDES	=	Animal.hpp		\
 				Dog.hpp			\
 				Cat.hpp			\
-#				WrongAnimal.hpp	\
-#				WrongCat.hpp
+				WrongAnimal.hpp	\
+				WrongCat.hpp
 
 SRC			=	main.cpp		\
 				Animal.cpp		\
 				Dog.cpp			\
 				Cat.cpp			\
-#				WrongAnimal.cpp	\
-#				WrongCat.cpp
+				WrongAnimal.cpp	\
+				WrongCat.cpp
 
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
