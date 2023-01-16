@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:46:39 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 16:02:49 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/16 15:29:19 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
@@ -26,6 +27,10 @@ class Cat : public Animal
         virtual ~Cat();
         
         virtual void    makeSound() const;
+        Brain           &getBrain() const;
+    
+    private:
+        Brain   *_brain;
 };
 
 #endif
