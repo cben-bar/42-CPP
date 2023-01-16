@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:08:17 by beni              #+#    #+#             */
-/*   Updated: 2023/01/16 10:50:45 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/16 17:16:03 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Animal::Animal() : _type("Animal")
 Animal::Animal(const Animal &origin)
 {
     *this = origin;
-    std::cout << VIOLET << "Animal copy constructor called" << std::endl;
+    std::cout << VIOLET << "Animal copy constructor called." << std::endl;
     return ;
 }
 
@@ -36,7 +36,7 @@ Animal::Animal(const Animal &origin)
 Animal &Animal::operator=(const Animal &origin)
 {
     this->_type = origin.getType();
-    std::cout << PASTEL_PURPLE << "Animal copy assignment operator called" << std::endl;
+    std::cout << PASTEL_PURPLE << "Animal copy assignment operator called." << std::endl;
     return (*this);
 }
 
@@ -46,7 +46,7 @@ Animal &Animal::operator=(const Animal &origin)
 
 Animal::~Animal()
 {
-    std::cout << PARMA << "Animal destructor called" << std::endl;
+    std::cout << PARMA << "Animal destructor called." << std::endl;
     return ;
 }
 

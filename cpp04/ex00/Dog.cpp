@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:41:45 by beni              #+#    #+#             */
-/*   Updated: 2023/01/16 10:50:59 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/16 17:15:17 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 ///////////////////////////////////////
 //*/ */ */ */ CONSTRUCTORS/* /* /* /*//
 ///////////////////////////////////////
+
 Dog::Dog()
 {
     this->_type = "Dog";
@@ -26,7 +27,7 @@ Dog::Dog()
 Dog::Dog(const Dog &origin)
 {
     *this = origin;
-    std::cout << PINE_GREEN << "Dog copy constructor called" << std::endl;
+    std::cout << PINE_GREEN << "Dog copy constructor called." << std::endl;
     return ;
 }
 
@@ -37,7 +38,7 @@ Dog::Dog(const Dog &origin)
 Dog &Dog::operator=(const Dog &origin)
 {
     this->_type = origin.getType();
-    std::cout << FLOWER_GREEN << "Animal copy assignment operator called" << std::endl;
+    std::cout << FLOWER_GREEN << "Animal copy assignment operator called." << std::endl;
     return (*this);
 }
 
@@ -47,7 +48,7 @@ Dog &Dog::operator=(const Dog &origin)
 
 Dog::~Dog()
 {
-    std::cout << SOFT_GREEN << "Dog destructor called" << std::endl;
+    std::cout << SOFT_GREEN << "Dog destructor called." << std::endl;
     return ;
 }
 
