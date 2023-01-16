@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:39:43 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 20:16:37 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/16 10:52:35 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ int main()
     std::cout << WHITE << "\t\tSUBJECT TEST WITH WRONGANIMAL" << std::endl;
     const WrongAnimal* peta = new WrongAnimal();
     const WrongAnimal* k = new WrongCat();
-    std::cout << WHITE << k->getType() << " " << std::endl;
+    std::cout << WHITE << peta->getType() << ": is the type of peta." << std::endl;
+    std::cout << WHITE << k->getType() << ": is the type of k." << std::endl;
     k->makeSound();
     peta->makeSound();
     delete(k);

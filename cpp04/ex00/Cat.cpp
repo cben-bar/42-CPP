@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:28:43 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 16:05:20 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/16 10:50:53 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 Cat::Cat()
 {
-    this->_type = "cat";
+    this->_type = "Cat";
     std::cout << DARK_BLUE << "Cat default constructor called." << std::endl;
     return ;
 }

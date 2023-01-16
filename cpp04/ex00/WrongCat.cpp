@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:28:43 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 19:52:57 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/16 10:50:16 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 WrongCat::WrongCat()
 {
-    this->_type = "wrongcat";
+    this->_type = "WrongCat";
     std::cout << RED << "WrongCat default constructor called." << std::endl;
     return ;
 }

@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:08:17 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 15:43:45 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/16 10:50:45 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 //*/ */ */ */ CONSTRUCTORS/* /* /* /*//
 ///////////////////////////////////////
 
-Animal::Animal() : _type("animal")
+Animal::Animal() : _type("Animal")
 {
     std::cout << PARMA << "Animal default constructor called." << std::endl;
     return ;

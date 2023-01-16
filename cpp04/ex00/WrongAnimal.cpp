@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:08:17 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 16:57:45 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/16 10:50:32 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 //*/ */ */ */ CONSTRUCTORS/* /* /* /*//
 ///////////////////////////////////////
 
-WrongAnimal::WrongAnimal() : _type("wronganimal")
+WrongAnimal::WrongAnimal() : _type("WrongAnimal")
 {
     std::cout << PASTEL_YELLOW << "WrongAnimal default constructor called." << std::endl;
     return ;
