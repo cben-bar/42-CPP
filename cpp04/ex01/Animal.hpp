@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:41:19 by beni              #+#    #+#             */
-/*   Updated: 2023/01/12 16:02:20 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/17 15:52:54 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ class Animal
         virtual ~Animal();
 
         std::string     getType() const;
-        
         virtual void    makeSound() const;
         
     protected:

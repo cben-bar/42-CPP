@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:21:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/05 14:36:17 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/17 16:14:43 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ Fixed::Fixed(const Fixed & origin)
 
 Fixed & Fixed::operator=(const Fixed & rhs)
 {
+    if (this == &rhs)
+        return (*this);
     std::cout << "Copy assignment operator called" << std::endl;
     this->_n = rhs.getRawBits();
     return (*this);
@@ -71,15 +73,11 @@ void Fixed::setRawBits(const int raw)
 float Fixed::toFloat( void ) const  //that converts the fixed-point value to a floating-point value..convertit la valeur en virgule fixe en nombre à virgule flottante.
 {
     float   converted_value_f;
-
     return (converted_value_f = (float)this->_n / (1 << this->_bits));   
 }
 
 int Fixed::toInt( void ) const  //that converts the fixed-point value to an integer value..convertit la valeur en virgule fixe en nombre entier.
 {
-
     int converted_value_i;
-
     return (converted_value_i = std::roundf(this->_n / (1 << this->_bits)));
-
 }

@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:41:45 by beni              #+#    #+#             */
-/*   Updated: 2023/01/16 17:15:48 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/17 15:57:30 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ Dog::Dog(const Dog &origin): _brain(new Brain())
 
 Dog &Dog::operator=(const Dog &origin)
 {
+    if (this == &origin)
+        return (*this);
     this->_type = origin.getType();
     *(this->_brain) = origin.getBrain();
     std::cout << FLOWER_GREEN << "Animal copy assignment operator called." << std::endl;

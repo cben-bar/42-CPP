@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:34:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/10 15:13:20 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/17 16:16:51 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ ClapTrap::ClapTrap(const ClapTrap &origin)
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &origin)
 {
+    if (this == &origin)
+        return (*this);
     this->_name = origin.getName();
     this->_hitPoints = origin.getHitPoint();
     this->_energyPoints = origin.getEnergyPoint();

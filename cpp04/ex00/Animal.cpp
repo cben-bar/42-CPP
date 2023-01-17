@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:08:17 by beni              #+#    #+#             */
-/*   Updated: 2023/01/16 17:16:15 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/17 16:17:37 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ Animal::Animal(const Animal &origin)
 
 Animal &Animal::operator=(const Animal &origin)
 {
+    if (this == &origin)
+        return (*this);
     this->_type = origin.getType();
     std::cout << PASTEL_PURPLE << "Animal copy assignment operator called." << std::endl;
     return (*this);

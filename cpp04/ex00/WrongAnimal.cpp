@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:08:17 by beni              #+#    #+#             */
-/*   Updated: 2023/01/16 10:50:32 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/17 16:18:14 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ WrongAnimal::WrongAnimal(const WrongAnimal &origin)
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &origin)
 {
+    if (this == &origin)
+        return (*this);
     this->_type = origin.getType();
     std::cout << SUN << "WrongAnimal copy assignment operator called" << std::endl;
     return (*this);

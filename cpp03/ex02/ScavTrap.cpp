@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:34:13 by beni              #+#    #+#             */
-/*   Updated: 2023/01/10 15:32:10 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/17 16:17:16 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ ScavTrap::ScavTrap(const ScavTrap &origin)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &origin)
 {
+    if (this == &origin)
+        return (*this);
     this->_name = origin.getName();
     this->_hitPoints = origin.getHitPoint();
     this->_energyPoints = origin.getEnergyPoint();

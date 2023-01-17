@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:21:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/06 10:56:27 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/17 16:15:16 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ Fixed::Fixed(Fixed const & origin)
 
 Fixed   &Fixed::operator=(Fixed const & rhs)
 {
+    if (this == &rhs)
+        return (*this);
     this->_n = rhs.getRawBits();
     return (*this);
 }

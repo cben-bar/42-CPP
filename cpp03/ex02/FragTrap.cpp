@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:37:09 by beni              #+#    #+#             */
-/*   Updated: 2023/01/10 15:59:45 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/17 16:17:05 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ FragTrap::FragTrap(const FragTrap &origin)
 
 FragTrap &FragTrap::operator=(const FragTrap &origin)
 {
+    if (this == &origin)
+        return (*this);
     this->_name = origin.getName();
     this->_hitPoints = origin.getHitPoint();
     this->_energyPoints = origin.getEnergyPoint();

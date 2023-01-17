@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:28:43 by beni              #+#    #+#             */
-/*   Updated: 2023/01/16 17:15:02 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/17 16:17:49 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ Cat::Cat(const Cat &origin)
 
 Cat &Cat::operator=(const Cat &origin)
 {
+    if (this == &origin)
+        return (*this);
     this->_type = origin.getType();
     std::cout << STORM_BLUE << "Cat copy assignment operator called." << std::endl;
     return (*this);
