@@ -6,11 +6,11 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:39:43 by beni              #+#    #+#             */
-/*   Updated: 2023/01/17 15:58:13 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/20 15:24:54 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
@@ -19,14 +19,14 @@
 int main()
 {
     std::cout << WHITE << "\t\tSUBJECT TEST" << std::endl;
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const AAnimal* j = new Dog();
+    const AAnimal* i = new Cat();
     delete j;
     delete i;
 
     std::cout << std::endl << WHITE << "\t\tANIMAL ARRAY TEST" << std::endl;
     
-    Animal  *animalArray[6];
+    AAnimal  *animalArray[6];
     for (int i = 0; i < 6; i++)
     {
         std::cout << WHITE << i << std::endl;

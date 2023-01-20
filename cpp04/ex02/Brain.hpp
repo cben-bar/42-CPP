@@ -6,14 +6,14 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:02:10 by beni              #+#    #+#             */
-/*   Updated: 2023/01/16 11:19:13 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/20 15:20:30 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 #define BRAIN_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 class Brain
 {

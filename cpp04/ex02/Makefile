@@ -6,7 +6,7 @@
 #    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/01/17 16:23:40 by beni             ###   ########.fr        #
+#    Updated: 2023/01/20 15:25:11 by beni             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	Abstract_class
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	Animal.hpp		\
+INCLUDES	=	AAnimal.hpp		\
 				Dog.hpp			\
 				Cat.hpp			\
 				WrongAnimal.hpp	\
@@ -22,7 +22,7 @@ INCLUDES	=	Animal.hpp		\
 				Brain.hpp
 
 SRC			=	main.cpp		\
-				Animal.cpp		\
+				AAnimal.cpp		\
 				Dog.cpp			\
 				Cat.cpp			\
 				WrongAnimal.cpp	\
