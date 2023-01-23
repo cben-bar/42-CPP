@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:08:17 by beni              #+#    #+#             */
-/*   Updated: 2023/01/20 15:19:58 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/23 12:35:30 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ AAnimal::AAnimal() : _type("AAnimal")
 AAnimal::AAnimal(const AAnimal &origin)
 {
     *this = origin;
-    std::cout << VIOLET << "AAnimal copy constructor called." << std::endl;
+    std::cout << VIOLET << "Bureaucrat copy constructor called." << std::endl;
     return ;
 }
 

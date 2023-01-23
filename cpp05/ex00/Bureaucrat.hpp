@@ -6,20 +6,20 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:42:05 by beni              #+#    #+#             */
-/*   Updated: 2023/01/23 11:23:59 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/23 13:11:04 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include <iomanip>
+#include <iostream>
+#include <string>
 
 #define WHITE           "\x1B[37m"
 #define GREY            "\x1B[30m"
 
 #define BLAND_BLUE       "\x1b[38;5;4m"
-#define PARMA           "\x1b[38;5;105m"
 #define STORM_BLUE     "\x1b[38;5;12m"
 #define CYAN            "\x1B[36m"
 
@@ -40,6 +40,7 @@
 #define MAGENTA         "\x1b[35m"
 #define PASTEL_PINK     "\x1b[38;5;213m"
 #define PASTEL_PURPLE   "\x1b[38;5;147m"
+#define PARMA           "\x1b[38;5;105m"
 #define PURPLE          "\x1b[38;5;140m"
 #define VIOLET          "\x1b[38;5;129m"
 #define POWDERY_PINK    "\x1b[38;5;225m"
@@ -48,6 +49,7 @@ class Bureaucrat
 {
     public:
         Bureaucrat();
+        Bureaucrat(std::string const name, int grade);
         Bureaucrat(const Bureaucrat &origin);
         Bureaucrat &operator=(const Bureaucrat &origin);
         ~Bureaucrat();
@@ -57,9 +59,22 @@ class Bureaucrat
         int                 incGrade();
         int                 decGrade();
 
+        class GradeTooLowException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+        class GradeTooHighException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+
     private:
         std::string const   _name;
         int                 _grade;
 };
+
+std::ostream &operator<<(std::ostream &o, const Bureaucrat &rhs);
 
 #endif 
