@@ -6,28 +6,18 @@
 #    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/01/20 15:42:18 by beni             ###   ########.fr        #
+#    Updated: 2023/01/20 16:31:44 by beni             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Abstract_class
+NAME		=	Mommy_when_I_grow_up_I_want_to_be_a_bureaucrat!
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	AAnimal.hpp		\
-				Dog.hpp			\
-				Cat.hpp			\
-				WrongAnimal.hpp	\
-				WrongCat.hpp	\
-				Brain.hpp
+INCLUDES	=	Bureaucrat.hpp		\
 
 SRC			=	main.cpp		\
-				AAnimal.cpp		\
-				Dog.cpp			\
-				Cat.cpp			\
-				WrongAnimal.cpp	\
-				WrongCat.cpp	\
-				Brain.cpp
+				Bureaucrat.cpp
 
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
