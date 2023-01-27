@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:03:40 by beni              #+#    #+#             */
-/*   Updated: 2023/01/23 13:21:57 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/27 15:47:27 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Bureaucrat::Bureaucrat(std::string const name, int grade): _name(name), _grade(g
     return ;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &origin)
+Bureaucrat::Bureaucrat(const Bureaucrat &origin): _name(origin.getName()) 
 {
     *this = origin;
 //    std::cout << VIOLET << "Bureaucrat copy constructor called." << std::endl;
