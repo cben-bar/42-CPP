@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:03:40 by beni              #+#    #+#             */
-/*   Updated: 2023/01/27 15:47:27 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/27 19:26:36 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,10 @@ int    Bureaucrat::decGrade()
     }
     return (this->_grade);
 }
+
+///////////////////////////////////////
+//*/ */ */ */ EXCEPTIONS  /* /* /* /*//
+///////////////////////////////////////
 
 const char  *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
