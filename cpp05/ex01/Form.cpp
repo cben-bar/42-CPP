@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:23:58 by beni              #+#    #+#             */
-/*   Updated: 2023/01/30 15:44:33 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/30 16:03:04 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,15 +100,23 @@ int                 Form::getGradeToExec() const
 
 void    Form::beSigned(Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getGrade() <= this->getGradeToSign())
-   {
-        if (this->getSigned())
-            std::cout << FLUO_GREEN << "Form " << this->getName() << " is already signed." << std::endl;
+    try
+    {
+        if (bureaucrat.getGrade() <= this->getGradeToSign())
+        {
+            if (this->getSigned())
+                std::cout << FLUO_GREEN << "Form " << this->getName() << " is already signed." << std::endl;
+            else
+                this->_signed = true;
+        }
         else
-            this->_signed = true;
+            throw GradeTooLowExcpetion();
     }
-    else
-        throw GradeTooLowExcpetion();
+    
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     return ;
 }
 

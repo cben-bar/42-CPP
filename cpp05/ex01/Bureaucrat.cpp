@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:03:40 by beni              #+#    #+#             */
-/*   Updated: 2023/01/30 14:57:47 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/30 16:02:45 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,10 +135,8 @@ void        Bureaucrat::signForm(Form &form)
     }
     catch(const std::exception& e)
     {
-        std::cerr << BLOOD_RED << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << '\n';
+        std::cerr << BLOOD_RED << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
     }
-    
-
     return ;
 }
 
