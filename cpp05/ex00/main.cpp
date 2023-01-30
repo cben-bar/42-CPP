@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:17:28 by beni              #+#    #+#             */
-/*   Updated: 2023/01/27 16:00:25 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/30 15:42:52 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << MAGENTA << e.what() << '\n';
+        std::cerr << MAGENTA << e.what() << std::endl;
     }
     std::cout << std::endl;
     std::cout << PASTEL_YELLOW << "\t\tTEST: GETTERS & LOWER GRADE" << std::endl;
@@ -60,7 +60,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << MAGENTA << e.what() << '\n';
+        std::cerr << MAGENTA << e.what() << std::endl;
     }
     std::cout << std::endl;
     std::cout << PASTEL_YELLOW << "\t\tTEST: OPERATOR =" << std::endl;
@@ -73,7 +73,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << MAGENTA << e.what() << '\n';
+        std::cerr << MAGENTA << e.what() << std::endl;
     }
     std::cout << std::endl;
     std::cout << PASTEL_YELLOW << "\t\tTEST: COPY CONSTRUCTOR" << std::endl;
@@ -89,8 +89,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << MAGENTA << e.what() << '\n';
+        std::cerr << MAGENTA << e.what() << std::endl;
     }
-    
     return (0);
 }
