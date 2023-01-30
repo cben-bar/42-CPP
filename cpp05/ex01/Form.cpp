@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:23:58 by beni              #+#    #+#             */
-/*   Updated: 2023/01/27 20:11:54 by beni             ###   ########.fr       */
+/*   Updated: 2023/01/30 15:44:33 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ Form    &Form::operator=(const Form &origin)
 std::ostream    &operator<<(std::ostream &o, const Form &rhs)
 {
     o << GREY << rhs.getName() << "'s info" << std::endl;
-    o << BLAND_BLUE << rhs.getSigned();
-    o << STORM_BLUE << rhs.getGradeToSign();
-    o << CYAN << rhs.getGradeToExec();
+    o << BLAND_BLUE << "Form state: " << rhs.getSigned() << std::endl;
+    o << STORM_BLUE << "Grade required to sign: " << rhs.getGradeToSign() << std::endl;
+    o << CYAN << "Grade required to execute: " << rhs.getGradeToExec();
     return (o);
 }
 
@@ -100,12 +100,15 @@ int                 Form::getGradeToExec() const
 
 void    Form::beSigned(Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getGrade() > this->getGradeToSign())
-        throw GradeTooLowExcpetion();
-    else if (this->_signed)
-        std::cout << "Form " << this->getName() << " is already signed." << std::endl;
+    if (bureaucrat.getGrade() <= this->getGradeToSign())
+   {
+        if (this->getSigned())
+            std::cout << FLUO_GREEN << "Form " << this->getName() << " is already signed." << std::endl;
+        else
+            this->_signed = true;
+    }
     else
-        this->_signed = true;
+        throw GradeTooLowExcpetion();
     return ;
 }
 
