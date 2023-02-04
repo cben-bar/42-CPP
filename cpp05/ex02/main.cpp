@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:35:46 by beni              #+#    #+#             */
-/*   Updated: 2023/02/04 22:41:18 by beni             ###   ########.fr       */
+/*   Updated: 2023/02/04 22:45:11 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int main()
     Bureaucrat              peggy("Peggy", 1);
     ShrubberyCreationForm   christmasParty("Christmas Party");
 
-    peggy.executeForm("ShrubberyCreationform");
+//    peggy.executeForm("ShrubberyCreationform");
     return (0);
 }
