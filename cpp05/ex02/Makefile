@@ -6,7 +6,7 @@
 #    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/01/30 16:22:18 by beni             ###   ########.fr        #
+#    Updated: 2023/02/04 15:53:40 by beni             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,14 @@ NAME		=	No_you_need_form_28B_not_28C...
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	Bureaucrat.hpp	\
-				Form.hpp
+INCLUDES	=	Bureaucrat.hpp				\
+				AForm.hpp					\
+				ShrubberyCreationForm.hpp	\
 
-SRC			=	main.cpp		\
-				Bureaucrat.cpp	\
-				Form.cpp
+SRC			=	main.cpp					\
+				Bureaucrat.cpp				\
+				AForm.cpp					\
+				ShrubberyCreationForm.cpp
 
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
