@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:23:58 by beni              #+#    #+#             */
-/*   Updated: 2023/01/30 16:03:04 by beni             ###   ########.fr       */
+/*   Updated: 2023/02/04 16:46:27 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,5 +131,5 @@ const char *Form::GradeTooLowExcpetion::what() const throw()
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-    return ("EXCEPTION: Bureaucrat grade is too high too sign. Yes, I know, it's strange.");
+    return ("EXCEPTION: Bureaucrat grade is too high to sign. Yes, I know, it's strange.");
 }
