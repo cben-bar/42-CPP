@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:51:16 by beni              #+#    #+#             */
-/*   Updated: 2023/02/04 17:27:09 by beni             ###   ########.fr       */
+/*   Updated: 2023/02/04 22:34:38 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,17 +76,25 @@ void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         std::cout << POOL_GREEN << executor.getName() << " draw:" << std::endl;
         std::ofstream file(this->_target + "_shrubbery");
         std::string line;
-        
-        line.append("               ,@@@@@@@,");
-        line.append("       ,,,.   ,@@@@@@/@@,  .oo8888o.");
-        line.append("    ,&%%&%&&%,@@@@@/@@@@@@,8888\88/8o");
-        line.append("   ,%&\%&&%&&%,@@@\@@@/@@@88\88888/88'");
-        line.append("   %&&%&%&/%&&%@@\@@/ /@@@88888\88888'");
-        line.append("   %&&%/ %&%%&&@@\ V /@@' `88\8 `/88'");
-        line.append("   `&%\ ` /%&'    |.|        \ '|8'");
-        line.append("       |o|        | |         | |");
-        line.append("       |.|        | |         | |");
-        line.append("    \\/ ._\//_/__/  ,\_//__\\/.  \_//__/_");
+
+        line.append("    .     .       .     .    +     .      .      .     .");
+        line.append("     .       .        .      #     .       .        .      ");
+        line.append("        .         .         ###         .         .      .");
+        line.append("      .      .    ''#:. .:##'''##:. .:#''  .      .");
+        line.append("          .       . ''####''###''####''  .");
+        line.append("       .      ''#:.    .:#''###''#:.    .:#''  .        .       .");
+        line.append("  .              ''#########'''#########''        .        .");
+        line.append("        .    ''#:.  ''####''###''####''  .:#''   .       .");
+        line.append("     .     . ''#######''''##'''##''''#######''  .        .");
+        line.append("              .   ''##''#####'#####''##''           .      .");
+        line.append("    .    ''#:. ...  .:##''###'###''##:.  ... .:#''     .");
+        line.append("      .     ''#######''##''#####''##''#######''      .     .");
+        line.append("    .    .     ''#####''''#######''''#####''    .      .");
+        line.append("             .      ''      000      ''    .     .");
+        line.append("       .         .    .     000     .        .       .");
+        line.append(".. .. .....................O000O........................ ......");
+        file << line << std::endl;
+        file.close();
     }
     else
         throw GradeTooLowExecute();

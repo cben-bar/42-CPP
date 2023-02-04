@@ -6,12 +6,14 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:07:13 by beni              #+#    #+#             */
-/*   Updated: 2023/02/04 16:49:40 by beni             ###   ########.fr       */
+/*   Updated: 2023/02/04 22:21:10 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AFORM_HPP
 #define AFORM_HPP
+
+#include <fstream>
 
 #include "Bureaucrat.hpp"
 
@@ -33,32 +35,32 @@ class AForm
         void                beSigned(Bureaucrat &bureaucrat);
         virtual void        execute(Bureaucrat const & executor) const = 0;
 
+        class GradeTooHighException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+        class GradeTooLowExcpetion : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+        class GradeTooHighExecute : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+        class GradeTooLowExecute : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
     private:
         const std::string   _name;
         bool                _signed;
         int                 _grade_to_sign;
         int                 _grade_to_execute;
     
-    class GradeTooHighException : public std::exception
-    {
-        public:
-            virtual const char* what() const throw();
-    };
-    class GradeTooLowExcpetion : public std::exception
-    {
-        public:
-            virtual const char* what() const throw();
-    };
-    class GradeTooHighExecute : public std::exception
-    {
-        public:
-            virtual const char* what() const throw();
-    };
-    class GradeTooLowExecute : public std::exception
-    {
-        public:
-            virtual const char* what() const throw();
-    };
 };
 
 std::ostream &operator<<(std::ostream &o, const AForm &rhs);
