@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:23:58 by beni              #+#    #+#             */
-/*   Updated: 2023/02/08 21:04:38 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/08 21:22:22 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void    AForm::beSigned(Bureaucrat &bureaucrat)
     
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cerr << BLOOD_RED << e.what() << std::endl;
     }
     return ;
 }

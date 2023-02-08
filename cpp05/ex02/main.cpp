@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 22:35:46 by beni              #+#    #+#             */
-/*   Updated: 2023/02/08 21:09:15 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/08 21:22:42 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main()
     }
     catch(std::exception& e)
     {
-        std::cerr << RED << e.what() << std::endl;
+        std::cerr << BLOOD_RED << e.what() << std::endl;
     }
     std::cout << std::endl;
     try
@@ -44,7 +44,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << RED << e.what() << std::endl << std::endl;
+        std::cerr << BLOOD_RED << e.what() << std::endl << std::endl;
     }
     
     return (0);
