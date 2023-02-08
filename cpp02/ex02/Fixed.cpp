@@ -6,7 +6,7 @@
 /*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:21:15 by beni              #+#    #+#             */
-/*   Updated: 2023/01/17 16:15:16 by beni             ###   ########.fr       */
+/*   Updated: 2023/02/08 15:10:13 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ Fixed::~Fixed()
 
 Fixed::Fixed(int const to_be_converted)    //converts to the corresponding fixed-point value..convertit l'entier en parametre en virgule fixe.
 {
-    this->setRawBits(std::roundf(to_be_converted * (1 << this->_bits)));
+    this->setRawBits(roundf(to_be_converted * (1 << this->_bits)));
     return ;
 }
 
 Fixed::Fixed(float const to_be_converted)   //converts to the corresponding fixed-point value..convertit le flottant en parametre en virgule fixe
 {
-    this->setRawBits(std::roundf(to_be_converted * (1 << this->_bits)));
+    this->setRawBits(roundf(to_be_converted * (1 << this->_bits)));
     return ;
 }
 
@@ -78,18 +78,12 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat( void ) const  //that converts the fixed-point value to a floating-point value..convertit la valeur en virgule fixe en nombre à virgule flottante.
 {
-    float   converted_value_f;
-
-    return (converted_value_f = (float)this->_n / (1 << this->_bits));   
+    return ((float)this->_n / (1 << this->_bits));   
 }
 
 int Fixed::toInt( void ) const  //that converts the fixed-point value to an integer value..convertit la valeur en virgule fixe en nombre entier.
 {
-
-    int converted_value_i;
-
-    return (converted_value_i = std::roundf(this->_n / (1 << this->_bits)));
-
+    return (roundf(this->_n / (1 << this->_bits)));
 }
 
 Fixed   &Fixed::min(Fixed &n1, Fixed &n2)
@@ -172,30 +166,22 @@ bool    Fixed::operator!=(const Fixed &rhs) const
 
 Fixed   Fixed::operator+(const Fixed &rhs) const
 {
-    float   add;
-
-    return (Fixed(add = this->toFloat() + rhs.toFloat()));
+    return (Fixed(this->toFloat() + rhs.toFloat()));
 }
 
 Fixed   Fixed::operator-(const Fixed &rhs) const
 {
-    float   sub;
-    
-    return (Fixed(sub = this->toFloat() - rhs.toFloat()));
+    return (Fixed(this->toFloat() - rhs.toFloat()));
 }
 
 Fixed   Fixed::operator*(const Fixed &rhs) const
 {
-    float   mul;
-
-    return (Fixed(mul = this->toFloat() * rhs.toFloat()));
+    return (Fixed(this->toFloat() * rhs.toFloat()));
 }
 
 Fixed   Fixed::operator/(const Fixed &rhs) const
 {
-    float   div;
-
-    return (Fixed(div = this->toFloat() / rhs.toFloat()));
+    return (Fixed(this->toFloat() / rhs.toFloat()));
 }
 
 ///////////////////////////////////////

@@ -104,7 +104,7 @@ void    Form::beSigned(Bureaucrat &bureaucrat)
     {
         if (bureaucrat.getGrade() <= this->getGradeToSign())
         {
-            if (this->getSigned())
+            if (this->getSigned() == 1)
                 std::cout << FLUO_GREEN << "Form " << this->getName() << " is already signed." << std::endl;
             else
                 this->_signed = true;

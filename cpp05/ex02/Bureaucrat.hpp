@@ -61,6 +61,7 @@ class Bureaucrat
         int                 incGrade();
         int                 decGrade();
         void                signForm(AForm &form);
+        void                executeForm(AForm const &form);
 
         class GradeTooLowException : public std::exception
         {

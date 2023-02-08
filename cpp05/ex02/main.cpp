@@ -16,9 +16,20 @@
 
 int main()
 {
-    Bureaucrat              peggy("Peggy", 1);
-    ShrubberyCreationForm   christmasParty("Christmas Party");
+    try
+    {
+        Bureaucrat              peggy("Peggy", 150);
+        Bureaucrat              taMereEnSlip("Mommy", 5);
+        ShrubberyCreationForm   christmasParty("Christmas Party");
 
-//    peggy.executeForm("ShrubberyCreationform");
+        christmasParty.beSigned(peggy);
+        peggy.executeForm(christmasParty);
+        christmasParty.beSigned(taMereEnSlip);
+        christmasParty.execute(taMereEnSlip);
+    }
+    catch(std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     return (0);
 }

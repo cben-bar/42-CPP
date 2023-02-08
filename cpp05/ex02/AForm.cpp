@@ -104,7 +104,7 @@ void    AForm::beSigned(Bureaucrat &bureaucrat)
     {
         if (bureaucrat.getGrade() <= this->getGradeToSign())
         {
-            if (this->getSigned())
+            if (this->getSigned() == 1)
                 std::cout << FLUO_GREEN << "Form " << this->getName() << " is already signed." << std::endl;
             else
                 this->_signed = true;
@@ -142,4 +142,9 @@ const char *AForm::GradeTooLowExecute::what() const throw()
 const char *AForm::GradeTooHighExecute::what() const throw()
 {
     return ("EXCEPTION: Bureaucrat grade is too high to execute. Yes, I know, it's strange.");
+}
+
+const char *AForm::UnsignedForm::what() const throw()
+{
+    return ("EXCEPTION : Missing signature on the form.");
 }

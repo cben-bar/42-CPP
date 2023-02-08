@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 15:51:16 by beni              #+#    #+#             */
-/*   Updated: 2023/02/04 22:49:32 by beni             ###   ########.fr       */
+/*   Created: 2023/02/08 19:19:40 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/02/08 19:27:38 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 {
-//  std::cout << PARMA << "ShrubberyCreationForm default constructor called." << std::endl;
     return;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
-//  std::cout << PASTEL_PINK << "ShrubberyCreationForm constructor called with target." << std::endl;
     return;
 }
 
@@ -42,7 +40,6 @@ ShrubberyCreationForm   &ShrubberyCreationForm::operator=(const ShrubberyCreatio
     if (this == &origin)
         return (*this);
     this->_target = origin.getTarget();
-//  std::cout << PASTEL_PURPLE << "Form copy assignment operator called." << std::endl;
     return (*this);
 }
 
@@ -52,7 +49,6 @@ ShrubberyCreationForm   &ShrubberyCreationForm::operator=(const ShrubberyCreatio
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-//  std::cout << PARMA << "ShrubberyCreationForm destructor called." << std::endl;
     return ;
 }
 
@@ -71,17 +67,20 @@ std::string ShrubberyCreationForm::getTarget() const
 
 void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+    if (!getSigned())
+        throw UnsignedForm();
     if (executor.getGrade() <= this->getGradeToExec())
     {
-        std::cout << POOL_GREEN << executor.getName() << " draw:" << std::endl;
-        std::ofstream file(this->_target + "_shrubbery");
+        std::string name = this->_target + "_shrubbery";
+        std::cout << POOL_GREEN << executor.getName() << " draw a three in file " << name << "." << std::endl;
+        std::ofstream file(name.c_str());
         std::string line;
 
         line.append("    .     .       .     .    +     .      .      .     .\n");
         line.append("     .       .        .      #     .       .        .      \n");
         line.append("        .         .         ###         .         .      .\n");
         line.append("      .      .    ''#:. .:##'''##:. .:#''    .      .\n");
-        line.append("          .       . ''####''###''####''  .        .       .\n");
+        line.append(".         .       . ''####''###''####''  .        .       .\n");
         line.append("       .      ''#:.    .:#''###''#:.    .:#''  .       .\n");
         line.append("  .              ''#########'''#########''        .        .\n");
         line.append("        .    ''#:.  ''####''###''####''  .:#''   .       .\n");

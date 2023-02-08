@@ -140,6 +140,19 @@ void        Bureaucrat::signForm(AForm &form)
     return ;
 }
 
+void        Bureaucrat::executeForm(AForm const &form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << PARMA << this->getName() << " execute " << form.getName() << "." << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << BLOOD_RED << e.what() << std::endl;
+    }
+}
+
 ///////////////////////////////////////
 //*/ */ */ */ EXCEPTIONS  /* /* /* /*//
 ///////////////////////////////////////

@@ -17,11 +17,15 @@ DIR_OBJS	=	./.OBJS/
 INCLUDES	=	Bureaucrat.hpp				\
 				AForm.hpp					\
 				ShrubberyCreationForm.hpp	\
+#				RobotomyRequestForm.hpp		\
+#				PresidentialPardonForm.hpp
 
 SRC			=	main.cpp					\
 				Bureaucrat.cpp				\
 				AForm.cpp					\
-				ShrubberyCreationForm.cpp
+				ShrubberyCreationForm.cpp	\
+#				RobotomyRequestForm.cpp		\
+#				PresidentialPardonForm.cpp
 
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
