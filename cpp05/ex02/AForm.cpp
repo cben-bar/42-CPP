@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:23:58 by beni              #+#    #+#             */
-/*   Updated: 2023/02/04 16:46:15 by beni             ###   ########.fr       */
+/*   Updated: 2023/02/08 21:04:38 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@
 
 AForm::AForm(): _name("topSecret"), _signed(false), _grade_to_sign(1), _grade_to_execute(2)
 {
-//  std::cout << PARMA << "Form default constructor called." << std::endl;
     return ;
 }
 
-AForm::AForm(std::string name, int signGrade, int execGrade): _name(name), _grade_to_sign(signGrade), _grade_to_execute(execGrade)
+AForm::AForm(std::string name, int signGrade, int execGrade): _name(name), _signed(false), _grade_to_sign(signGrade), _grade_to_execute(execGrade)
 {
-//  std::cout << PASTEL_PINK << "Form constructor called with name and grade." << std::endl;
     if (signGrade > 150 || execGrade > 150)
         throw GradeTooLowExcpetion();
     else if (signGrade < 1 || execGrade < 1)
@@ -32,10 +30,9 @@ AForm::AForm(std::string name, int signGrade, int execGrade): _name(name), _grad
     return ;
 }
 
-AForm::AForm(const AForm &origin): _name(origin.getName()), _grade_to_sign(origin.getGradeToSign()), _grade_to_execute(origin.getGradeToExec())
+AForm::AForm(const AForm &origin): _name(origin.getName()), _signed(origin.getSigned()), _grade_to_sign(origin.getGradeToSign()), _grade_to_execute(origin.getGradeToExec())
 {
     *this = origin;
-//  std::cout << VIOLET << "Form copy constructor called." << std::endl;
 }
 
 ///////////////////////////////////////
@@ -47,7 +44,6 @@ AForm    &AForm::operator=(const AForm &origin)
     if (this == &origin)
         return (*this);
     this->_signed = origin.getSigned();
-//  std::cout << PASTEL_PURPLE << "Form copy assignment operator called." << std::endl;
     return (*this);
 }
 
@@ -66,8 +62,7 @@ std::ostream    &operator<<(std::ostream &o, const AForm &rhs)
 
 AForm::~AForm()
 {
-//  std::cout << PARMA << "Form destructor called for " << this->_name << std::endl;
-    return ;
+    return;
 }
 
 ///////////////////////////////////////
@@ -104,10 +99,13 @@ void    AForm::beSigned(Bureaucrat &bureaucrat)
     {
         if (bureaucrat.getGrade() <= this->getGradeToSign())
         {
-            if (this->getSigned() == 1)
+            if (this->getSigned())
                 std::cout << FLUO_GREEN << "Form " << this->getName() << " is already signed." << std::endl;
             else
+            {
                 this->_signed = true;
+                std::cout << FLUO_GREEN << "Form " << this->getName() << " is signed by " << bureaucrat.getName() << "." << std::endl;
+            }
         }
         else
             throw GradeTooLowExcpetion();

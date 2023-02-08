@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: beni <beni@student.42.fr>                  +#+  +:+       +#+         #
+#    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/02/04 15:53:40 by beni             ###   ########.fr        #
+#    Updated: 2023/02/08 20:12:57 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@ DIR_OBJS	=	./.OBJS/
 INCLUDES	=	Bureaucrat.hpp				\
 				AForm.hpp					\
 				ShrubberyCreationForm.hpp	\
-#				RobotomyRequestForm.hpp		\
+				RobotomyRequestForm.hpp		\
 #				PresidentialPardonForm.hpp
 
 SRC			=	main.cpp					\
 				Bureaucrat.cpp				\
 				AForm.cpp					\
 				ShrubberyCreationForm.cpp	\
-#				RobotomyRequestForm.cpp		\
+				RobotomyRequestForm.cpp		\
 #				PresidentialPardonForm.cpp
 
 

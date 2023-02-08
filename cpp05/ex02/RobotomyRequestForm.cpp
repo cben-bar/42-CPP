@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 19:22:08 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/08 19:41:15 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/08 20:24:08 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &origin): AFo
 //*/ */ */ */  ASSIGNMENT /* /* /* /*//
 ///////////////////////////////////////
 
-RobotomyRequestForm::RobotomyRequestForm    &RobotomyRequestForm::operator=(const RobotomyRequestForm::RobotomyRequestForm &origin)
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &origin)
 {
     if (this == &origin)
         return (*this);
@@ -68,19 +68,17 @@ std::string RobotomyRequestForm::getTarget() const
 
 void    RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-    if (!getSigned())
+    if (!this->getSigned())
       throw UnsignedForm();
     if (executor.getGrade() <= this->getGradeToExec())
     {
-        std::cout << BlAND_BLUE << "Brrrr brrrrr -[Drilling noises]-" << std::endl;
+        int random = std::rand() % 100;
+        std::cout << BLAND_BLUE << "Brrrr brrrrr -[Drilling noises]-" << std::endl;
         if (random % 2)
             std::cout << CYAN << executor.getName() << " has been robotomized with success." << std::endl;
         else
             std::cout << MAGENTA << "The robotomy failed on " << executor.getName() << "." << std::endl;
     }
     else
-        throw GradeTooLowException();
+        throw GradeTooLowExecute();
 }
-
-// Makes some drilling noises. Then, informs that <target> has been robotomized
-// successfully 50% of the time. Otherwise, informs that the robotomy failed.
