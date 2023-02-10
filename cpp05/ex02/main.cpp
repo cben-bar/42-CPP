@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 22:35:46 by beni              #+#    #+#             */
-/*   Updated: 2023/02/08 21:22:42 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/02/10 16:10:25 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/02/10 16:10:28 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ int main()
         RobotomyRequestForm robotomy("Alienator");
         RobotomyRequestForm robotomy2("Alienator2");
         megan.signForm(robotomy2);
+        robotomy2.execute(harry);
+        harry.executeForm(robotomy2);
         robotomy2.execute(megan);
     }
     catch(const std::exception& e)
     {
-        std::cerr << BLOOD_RED << e.what() << std::endl << std::endl;
+        std::cerr << BLOOD_RED << e.what() << std::endl << WHITE << std::endl;
     }
     
     return (0);

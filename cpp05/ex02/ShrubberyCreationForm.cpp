@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 19:19:40 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/08 19:27:38 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/10 16:24:01 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 //*/ */ */ */ CONSTRUCTORS/* /* /* /*//
 ///////////////////////////////////////
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", 145, 137), _target("Nobody") 
 {
     return;
 }

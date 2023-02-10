@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:06:39 by beni              #+#    #+#             */
-/*   Updated: 2023/01/30 16:17:35 by beni             ###   ########.fr       */
+/*   Updated: 2023/02/10 15:55:29 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ int main()
     std::cout << std::endl << copyBrexit << std::endl;
 
     Form    copyBrexit2(brexit);
-    std::cout << std::endl << copyBrexit2 << std::endl;
+    std::cout << std::endl << copyBrexit2 << WHITE << std::endl;
     return (0);
 }
