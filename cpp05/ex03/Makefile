@@ -6,7 +6,7 @@
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/02/10 16:24:36 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/02/10 17:51:53 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,16 @@ INCLUDES	=	Bureaucrat.hpp				\
 				AForm.hpp					\
 				ShrubberyCreationForm.hpp	\
 				RobotomyRequestForm.hpp		\
-				PresidentialPardonForm.hpp
+				PresidentialPardonForm.hpp	\
+				Intern.hpp
 
 SRC			=	main.cpp					\
 				Bureaucrat.cpp				\
 				AForm.cpp					\
 				ShrubberyCreationForm.cpp	\
 				RobotomyRequestForm.cpp		\
-				PresidentialPardonForm.cpp
+				PresidentialPardonForm.cpp	\
+				Intern.cpp
 
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
