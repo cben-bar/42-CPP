@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 16:10:25 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/10 17:40:35 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/10 16:59:50 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int main()
         for(int i = 0; i < 5; i++)
             queen.decGrade();
         queen.executeForm(iHaveKenPamela);
-        std::cout << WHITE;
     }
     catch(const std::exception& e)
     {

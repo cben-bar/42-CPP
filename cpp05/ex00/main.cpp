@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:17:28 by beni              #+#    #+#             */
-/*   Updated: 2023/02/10 15:56:30 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/10 17:41:48 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << MAGENTA << e.what() << std::endl;
+        std::cerr << MAGENTA << e.what() << WHITE << std::endl;
     }
     return (0);
 }
