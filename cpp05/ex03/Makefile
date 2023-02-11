@@ -6,16 +6,17 @@
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/02/10 17:51:53 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/02/11 18:49:48 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	No_you_need_form_28B_not_28C...
+NAME		=	At_least_this_beats_coffee-making
 
 DIR_OBJS	=	./.OBJS/
 
 INCLUDES	=	Bureaucrat.hpp				\
 				AForm.hpp					\
+				Form.hpp					\
 				ShrubberyCreationForm.hpp	\
 				RobotomyRequestForm.hpp		\
 				PresidentialPardonForm.hpp	\
@@ -24,6 +25,7 @@ INCLUDES	=	Bureaucrat.hpp				\
 SRC			=	main.cpp					\
 				Bureaucrat.cpp				\
 				AForm.cpp					\
+				Form.cpp					\
 				ShrubberyCreationForm.cpp	\
 				RobotomyRequestForm.cpp		\
 				PresidentialPardonForm.cpp	\

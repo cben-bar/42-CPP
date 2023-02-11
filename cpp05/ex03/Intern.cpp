@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:45:29 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/10 18:14:51 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/11 18:48:47 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 
 Intern::Intern()
 {
+	_form[0] = "Robotomy request";
+	_form[2] = "Shrubbery creation";
+	_form[2] = "Presidential pardon";
 	return;
 }
 
@@ -49,8 +52,49 @@ Intern::~Intern()
 //*/ */ */ */  FUNCTIONS  /* /* /* /*//
 ///////////////////////////////////////
 
-AForm	*makeForm(std::string formName, std::string target)
+AForm	*Intern::makeForm(std::string formName, std::string target)
 {
-	//faire un tab de nom? les comparer? et apeller la fonction de creation de form correspondantes? du coup faire trois fonctions.
-	return();
+	int i = this->getIndex(formName);
+	switch(i)
+	{
+		case 0:
+			std::cout << PASTEL_YELLOW << "Intern create " << formName << "." << std::endl;
+			return (createRobotomyForm(target));
+		case 1:
+			std::cout << PASTEL_YELLOW << "Intern create " << formName << "." << std::endl;
+			return (createRobotomyForm(target));
+		case 2:
+			std::cout << PASTEL_YELLOW << "Intern create " << formName << "." << std::endl;
+			return (createRobotomyForm(target));
+		default:
+			std::cout << BLOOD_RED << "Error: " << formName << " does not exist." << std::endl;
+	}
+	return (NULL);
+}
+
+int		Intern::getIndex(std::string formName)
+{
+	for (int i = 0; i < 3; i++)
+	{
+		if (this->_form[i] == formName)
+			return (i);
+	}
+	return (-1);
+}
+
+AForm	*Intern::createRobotomyForm(std::string target)
+{
+	return new RobotomyRequestForm(target);
+}
+
+
+AForm		*createShrubberyForm(std::string target)
+{
+	return new ShrubberyCreationForm(target);
+}
+
+
+AForm		*createPresidentialForm(std::string target)
+{
+	return new PresidentialPardonForm(target);
 }
