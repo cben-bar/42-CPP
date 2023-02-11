@@ -10,14 +10,13 @@ Makefile# **********************************************************************
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Conversion_of_scalar_types
+NAME		=	Identify_real_type
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	ConvertFromString.hpp
+INCLUDES	=	
 
-SRC			=	ConvertFromString.cpp	\
-				main.cpp
+SRC			=	main.cpp
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
