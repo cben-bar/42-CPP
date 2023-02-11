@@ -6,7 +6,7 @@
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/02/11 18:49:48 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/02/11 18:51:09 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ DIR_OBJS	=	./.OBJS/
 
 INCLUDES	=	Bureaucrat.hpp				\
 				AForm.hpp					\
-				Form.hpp					\
 				ShrubberyCreationForm.hpp	\
 				RobotomyRequestForm.hpp		\
 				PresidentialPardonForm.hpp	\
@@ -25,7 +24,6 @@ INCLUDES	=	Bureaucrat.hpp				\
 SRC			=	main.cpp					\
 				Bureaucrat.cpp				\
 				AForm.cpp					\
-				Form.cpp					\
 				ShrubberyCreationForm.cpp	\
 				RobotomyRequestForm.cpp		\
 				PresidentialPardonForm.cpp	\

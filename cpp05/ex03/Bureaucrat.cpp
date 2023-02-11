@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:03:40 by beni              #+#    #+#             */
-/*   Updated: 2023/02/08 21:22:15 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:20:14 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@
 
 Bureaucrat::Bureaucrat()
 {
-//  std::cout << PARMA << "Bureaucrat default constructor called." << std::endl;
     return ;
 }
 
 Bureaucrat::Bureaucrat(std::string const name, int grade): _name(name), _grade(grade)
 {
-//  std::cout << PASTEL_PINK << "Bureaucrat constructor called with name and grade." << std::endl;
     if (grade > 150)
         throw GradeTooLowException();
     else if (grade < 1)
@@ -36,7 +34,6 @@ Bureaucrat::Bureaucrat(std::string const name, int grade): _name(name), _grade(g
 Bureaucrat::Bureaucrat(const Bureaucrat &origin): _name(origin.getName()) 
 {
     *this = origin;
-//  std::cout << VIOLET << "Bureaucrat copy constructor called." << std::endl;
 }
 
 ///////////////////////////////////////
@@ -48,7 +45,6 @@ Bureaucrat     &Bureaucrat::operator=(const Bureaucrat &origin)
     if (this == &origin)
         return (*this);
     this->_grade = origin.getGrade();
-//  std::cout << PASTEL_PURPLE << "Bureaucrat copy assignment operator called." << std::endl;
     return (*this);
 }
 
@@ -64,7 +60,6 @@ std::ostream    &operator<<(std::ostream &o, const Bureaucrat &rhs)
 
 Bureaucrat::~Bureaucrat()
 {
-//  std::cout << PARMA << "Bureaucrat destructor called." << std::endl;
     return ;
 }
 
@@ -135,7 +130,7 @@ void        Bureaucrat::signForm(AForm &form)
     }
     catch(const std::exception& e)
     {
-        std::cerr << BLOOD_RED << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+        std::cerr << BLOOD_RED << this->_name << " couldn't sign " << form.getName() << " because: " << e.what() << std::endl;
     }
     return ;
 }
@@ -159,10 +154,10 @@ void        Bureaucrat::executeForm(AForm const &form)
 
 const char  *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return ("EXCEPTION : Bureaucrat grade is too low.");
+	return ("EXCEPTION: Bureaucrat grade is too low.");
 }
 
 const char  *Bureaucrat::GradeTooHighException::what(void) const throw()
 {
-	return ("EXCEPTION : Bureaucrat grade is too high.");
+	return ("EXCEPTION: Bureaucrat grade is too high.");
 }

@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 20:11:54 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/08 20:18:03 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:01:16 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class RobotomyRequestForm: public AForm
         RobotomyRequestForm(std::string target);
         RobotomyRequestForm(const RobotomyRequestForm &origin);
         RobotomyRequestForm &operator=(const RobotomyRequestForm &origin);
-        ~RobotomyRequestForm();
+        virtual ~RobotomyRequestForm();
 
         std::string     getTarget() const;
         virtual void    execute(Bureaucrat const &executor) const;

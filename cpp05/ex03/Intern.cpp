@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:45:29 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/11 18:48:47 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:18:56 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 Intern::Intern()
 {
 	_form[0] = "Robotomy request";
-	_form[2] = "Shrubbery creation";
+	_form[1] = "Shrubbery creation";
 	_form[2] = "Presidential pardon";
 	return;
 }
@@ -58,13 +58,13 @@ AForm	*Intern::makeForm(std::string formName, std::string target)
 	switch(i)
 	{
 		case 0:
-			std::cout << PASTEL_YELLOW << "Intern create " << formName << "." << std::endl;
+			std::cout << PASTEL_YELLOW << "Intern create " << formName << " form." << std::endl;
 			return (createRobotomyForm(target));
 		case 1:
-			std::cout << PASTEL_YELLOW << "Intern create " << formName << "." << std::endl;
+			std::cout << PASTEL_YELLOW << "Intern create " << formName << " form." << std::endl;
 			return (createRobotomyForm(target));
 		case 2:
-			std::cout << PASTEL_YELLOW << "Intern create " << formName << "." << std::endl;
+			std::cout << PASTEL_YELLOW << "Intern create " << formName << " form." << std::endl;
 			return (createRobotomyForm(target));
 		default:
 			std::cout << BLOOD_RED << "Error: " << formName << " does not exist." << std::endl;

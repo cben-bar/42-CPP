@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 19:19:57 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/08 19:21:51 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:01:22 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ShrubberyCreationForm: public AForm
         ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(const ShrubberyCreationForm &origin);
         ShrubberyCreationForm &operator=(const ShrubberyCreationForm &origin);
-        ~ShrubberyCreationForm();
+        virtual ~ShrubberyCreationForm();
 
         std::string     getTarget() const;
         void            shrubberyDisplay(std::string target);

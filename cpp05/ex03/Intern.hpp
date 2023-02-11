@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:45:45 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/11 18:47:14 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/11 18:59:25 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@ class Intern
 		Intern &operator=(const Intern &origin);
 		~Intern();
 
-	private:
-		AForm		*makeForm(std::string formName, std::string formTarget);
 		std::string	_form[3];
 		int			getIndex(std::string formName);
+		AForm		*makeForm(std::string formName, std::string formTarget);
 		AForm		*createRobotomyForm(std::string target);
 		AForm		*createShrubberyForm(std::string target);
 		AForm		*createPresidentialForm(std::string target);

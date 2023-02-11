@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:07:13 by beni              #+#    #+#             */
-/*   Updated: 2023/02/04 22:21:10 by beni             ###   ########.fr       */
+/*   Updated: 2023/02/11 19:01:01 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AForm
         AForm(std::string const name, int signGrade, int execGrade);
         AForm(const AForm &origin);
         AForm &operator=(const AForm &origin);
-        ~AForm();
+        virtual ~AForm();
 
         const std::string   getName() const;
         bool                getSigned() const;
