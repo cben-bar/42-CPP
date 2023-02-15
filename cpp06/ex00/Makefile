@@ -1,4 +1,4 @@
-Makefile# **************************************************************************** #
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,7 +6,7 @@ Makefile# **********************************************************************
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/02/11 18:51:09 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/02/15 16:23:39 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,12 @@ NAME		=	Conversion_of_scalar_types
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	ConvertFromString.hpp
+INCLUDES	=	ConvertFromString.hpp	\
 
-SRC			=	ConvertFromString.cpp	\
-				main.cpp
+SRC			=	main.cpp				\
+				ConvertFromString.cpp	\
+				checkType.cpp
+
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
