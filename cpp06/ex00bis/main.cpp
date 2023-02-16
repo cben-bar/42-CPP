@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 20:03:10 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/16 21:47:45 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/02/16 22:57:08 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/02/16 23:02:12 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ConvertFromString.hpp"
+#include "Conversion.hpp"
 
 int main(int ac, char **av)
 {

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ConvertFromString.hpp                              :+:      :+:    :+:   */
+/*   Conversion.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 20:04:25 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/16 22:14:01 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/16 23:01:24 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERTFROMSTRING_HPP
-#define CONVERTFROMSTRING_HPP
+#ifndef CONVERSION_HPP
+#define CONVERSION_HPP
 
 ///////////////////////////////////////
 //*/ */ */ */    COLORS   /* /* /* /*//
@@ -55,15 +55,10 @@
 //*/ */ */ */    CHECKS   /* /* /* /*//
 ///////////////////////////////////////
 
-bool	check_convert(const std::string param, char *p);
+
 
 ///////////////////////////////////////
 //*/ */ */ */ CONVERSIONS /* /* /* /*//
 ///////////////////////////////////////
-
-void	convert_char(double to_convert);
-void	convert_int(double to_convert);
-void	convert_float(double to_convert);
-void	convert_double(double to_convert);
 
 #endif

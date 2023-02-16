@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checkType.cpp                                      :+:      :+:    :+:   */
+/*   parsing.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 16:22:58 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/16 23:05:29 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/02/16 22:59:05 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/02/16 23:08:11 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ConvertFromString.hpp"
+#include "Conversion.hpp"
 
-bool	is_char(std::string param)
+bool	is_char(const std::string param)
 {
 	if (param.length() == 1 && isprint(param[0]))
 		return (true);
 	return (false);
 }
 
-bool	is_int(std::string param)
+bool	is_int(const std::string param)
 {
 	size_t	i = 0;
 
@@ -36,7 +36,7 @@ bool	is_int(std::string param)
 	return (true);
 }
 
-bool	is_float(std::string param)
+bool	is_float(const std::string param)
 {
 	int		dot = 0;
 	int		neg = 0;
@@ -70,7 +70,7 @@ bool	is_float(std::string param)
 	return (true);
 }
 
-bool	is_double(std::string param)
+bool	is_double(const std::string param)
 {
 	int	dot = 0;
 	int neg = 0;
@@ -105,14 +105,15 @@ bool	is_double(std::string param)
 bool	check_convert(const std::string param, char *p)
 {
 	double to_convert = strtod(p, NULL);
+
 	if (is_char(param))
-		convert_char(to_convert);
+		print_from_char(to_convert);
 	else if (is_int(param))
-		convert_int(to_convert);
+		print_from_int(to_convert);
 	else if (is_float(param))
-		convert_float(to_convert);
+		print_from_float(to_convert);
 	else if (is_double(param))
-		convert_double(to_convert);
+		print_from_double(to_convert);
 	else
 		return (false);
 	return (true);

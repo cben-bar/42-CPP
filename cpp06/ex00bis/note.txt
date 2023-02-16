@@ -1,0 +1,26 @@
+
+/*
+	verif
+		if (impossible || non displayable)
+			affiche impossible || non displayable 
+		else
+			cast char
+	
+	verif
+		if (truc)
+			afficher impossible
+		else
+			cast int
+	
+	verif
+		if (truc)
+			afficher (inff, nanf)
+		else
+			cast float
+	
+	verif
+		if (truc)
+			afficher (inf, nan)
+		else
+			cast double
+*/

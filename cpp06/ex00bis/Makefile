@@ -6,7 +6,7 @@
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/02/16 21:55:18 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/02/16 22:56:39 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,10 @@ NAME		=	Conversion_of_scalar_types
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	ConvertFromString.hpp	\
+INCLUDES	=	
 
-SRC			=	main.cpp				\
-				checkType.cpp			\
-				ConvertChar.cpp			\
-				ConvertInt.cpp			\
-				ConvertFloat.cpp		\
-				ConvertDouble.cpp
+SRC			=	main.cpp
+
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
