@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 20:03:10 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/16 21:47:45 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/02/16 22:57:08 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/02/17 18:08:55 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ConvertFromString.hpp"
+#include "Conversion.hpp"
 
 int main(int ac, char **av)
 {
@@ -20,7 +20,7 @@ int main(int ac, char **av)
 		return (0);
 	}
 	const std::string param = av[1];
-	if (!check_convert(param, av[1]))
-		std::cout << BLOOD_RED << "char: impossible" << std::endl << "int: impossible" << std::endl << "float: impossible" << std::endl << "double:impossible" << std:: endl;
+	if (pars(param) == 2)
+		std::cout << BLOOD_RED << "char: impossible" << std::endl << "int: impossible" << std::endl << "float: impossible" << std::endl << "double:impossible" << WHITE << std:: endl;
 	return (0);
 }

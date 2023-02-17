@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 16:22:58 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/16 23:05:29 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/17 14:43:00 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ bool	is_double(std::string param)
 	return (true);
 }
 
-bool	check_convert(const std::string param, char *p)
+bool	check_convert(std::string param, char *p)
 {
 	double to_convert = strtod(p, NULL);
 	if (is_char(param))
