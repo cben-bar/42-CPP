@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ConvertDouble.cpp                                  :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 19:21:16 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/16 22:17:43 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/02/18 18:03:09 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/02/18 18:04:36 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ConvertFromString.hpp"
+#ifndef A_HPP
+#define A_HPP
 
-void	convert_double(double to_convert)
-{
-	std::cout << PASTEL_GREEN <<"double: " << to_convert << std::endl;
-}
+#include "Base.hpp"
+
+class A: public Base
+{};
+
+#endif

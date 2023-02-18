@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serialization.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 20:03:10 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/18 18:11:24 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/02/18 16:00:43 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/02/18 16:18:50 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#include "Serialization.hpp"
 
-int main()
+uintptr_t	serialize(Data *ptr)
 {
-	return (0);
+	//Elle prend un pointeur et convertit celui-ci vers le type d’entier non-signé uintptr_t.
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data* deserialize(uintptr_t raw)
+{
+	// Elle prend un entier non-signé en paramètre et le convertit en pointeur sur Data.
+	return(reinterpret_cast<Data *>(raw));
 }

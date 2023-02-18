@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ConvertFloat.cpp                                   :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 19:20:40 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/16 19:21:02 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/02/18 17:56:39 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/02/18 18:00:59 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ConvertFromString.hpp"
+#ifndef BASE_HPP
+#define BASE_HPP
 
-void	convert_float(std::string param)
+#include <iostream>
+
+class Base
 {
-	std::cout << CYAN << "convertion de float = " << param << std::endl;
-}
+	public:
+		virtual ~Base();
+};
+
+#endif

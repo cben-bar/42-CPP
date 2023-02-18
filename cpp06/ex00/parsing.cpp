@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 22:59:05 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/17 18:33:13 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:47:49 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,30 +103,24 @@ bool	is_double(const std::string param)
 int	pars(const std::string param)
 {
 	double to_convert = strtod(param.c_str(), NULL);
-	std::cout << "double to_convert = " << to_convert << std::endl << std::endl;
-	std::cout << "string param = " << param << std::endl << std::endl;
 	
 	if (is_char(param))
 	{
-		// std::cout << "is_char" << std::endl;
 		char_display(param);
 		return(1);
 	}
 	else if (is_int(param))
 	{
-		// std::cout << "is_int" << std::endl;
 		int_display(param, to_convert);
 		return(1);
 	}
 	else if (is_float(param))
 	{
-		// std::cout << "is_float" << std::endl;
 		float_display(param, to_convert);
 		return(1);
 	}
 	else if (is_double(param))
 	{
-		// std::cout << "is_double" << std::endl;
 		double_display(param, to_convert);
 		return(1);
 	}
@@ -135,6 +129,5 @@ int	pars(const std::string param)
 		if (other_display(param))
 			return(1);
 	}
-	// std::cout << "is_nada" << std::endl;
 	return (2);
 }

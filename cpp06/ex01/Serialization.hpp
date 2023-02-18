@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ConvertFromString.hpp                              :+:      :+:    :+:   */
+/*   Serialization.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 20:04:25 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/16 22:14:01 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/02/18 15:58:17 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/02/18 16:34:28 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERTFROMSTRING_HPP
-#define CONVERTFROMSTRING_HPP
+#ifndef SERIALIZATION_HPP
+#define SERIALIZATION_HPP
+
+#include <iostream>
+#include <stdint.h>
 
 ///////////////////////////////////////
 //*/ */ */ */    COLORS   /* /* /* /*//
@@ -46,24 +49,13 @@
 #define VIOLET          "\x1b[38;5;129m"
 #define POWDERY_PINK    "\x1b[38;5;225m"
 
-#include <iostream>
-#include <limits.h>
-#include <string>
-#include <cstdlib>
+typedef struct s_data
+{
+	int	a;
+	int	b;
+}				Data;
 
-///////////////////////////////////////
-//*/ */ */ */    CHECKS   /* /* /* /*//
-///////////////////////////////////////
-
-bool	check_convert(const std::string param, char *p);
-
-///////////////////////////////////////
-//*/ */ */ */ CONVERSIONS /* /* /* /*//
-///////////////////////////////////////
-
-void	convert_char(double to_convert);
-void	convert_int(double to_convert);
-void	convert_float(double to_convert);
-void	convert_double(double to_convert);
+uintptr_t	serialize(Data* ptr);
+Data*		deserialize(uintptr_t raw);
 
 #endif

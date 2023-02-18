@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ConvertChar.cpp                                    :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 19:20:04 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/16 22:11:15 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/02/18 18:05:12 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/02/18 18:05:21 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ConvertFromString.hpp"
+#ifndef B_HPP
+#define B_HPP
 
-void	convert_char(double to_convert)
-{
-	std::cout << CYAN << "char: " << static_cast<char>(to_convert) << std::endl;
-}
+#include "Base.hpp"
+
+class B: public Base
+{};
+
+#endif
