@@ -6,7 +6,7 @@
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/02/18 17:56:14 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/02/19 19:14:00 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,14 @@ NAME		=	Identify_real_type
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	Base.hpp	\
-				A.hpp		\
-				B.hpp		\
+INCLUDES	=	Base.hpp		\
+				A.hpp			\
+				B.hpp			\
 				C.hpp
 
-SRC			=	main.cpp	\
-				Base.cpp	\
-				A.cpp		\
-				B.cpp		\
-				C.cpp
+SRC			=	main.cpp		\
+				Base.cpp		\
+				Functions.cpp
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 

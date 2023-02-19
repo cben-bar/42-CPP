@@ -6,11 +6,14 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 20:03:10 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/18 18:11:24 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/19 19:09:53 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
 int main()
 {
