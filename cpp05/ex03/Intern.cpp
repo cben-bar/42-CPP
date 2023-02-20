@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:45:29 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/11 19:18:56 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:36:26 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ AForm	*Intern::makeForm(std::string formName, std::string target)
 			return (createRobotomyForm(target));
 		case 1:
 			std::cout << PASTEL_YELLOW << "Intern create " << formName << " form." << std::endl;
-			return (createRobotomyForm(target));
+			return (createShrubberyForm(target));
 		case 2:
 			std::cout << PASTEL_YELLOW << "Intern create " << formName << " form." << std::endl;
-			return (createRobotomyForm(target));
+			return (createPresidentialForm(target));
 		default:
 			std::cout << BLOOD_RED << "Error: " << formName << " does not exist." << std::endl;
 	}
@@ -88,13 +88,13 @@ AForm	*Intern::createRobotomyForm(std::string target)
 }
 
 
-AForm		*createShrubberyForm(std::string target)
+AForm	*Intern::createShrubberyForm(std::string target)
 {
 	return new ShrubberyCreationForm(target);
 }
 
 
-AForm		*createPresidentialForm(std::string target)
+AForm	*Intern::createPresidentialForm(std::string target)
 {
 	return new PresidentialPardonForm(target);
 }
