@@ -6,15 +6,15 @@
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/02/20 18:18:52 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/02/20 19:27:24 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Start_with_a_few_functions
+NAME		=	Iter
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	whatever.hpp		\
+INCLUDES	=	iter.hpp		\
 
 SRC			=	main.cpp
 
