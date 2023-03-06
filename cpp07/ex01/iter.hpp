@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 19:27:47 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/20 19:32:42 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:57:49 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,30 @@
 ///////////////////////////////////////
 
 template<typename T>
-void	iter(T addTab, T sizeTab, ....)
+void	print(T data)
 {
-	
+	std::cout << data << " . ";
+}
+
+template<typename T>
+void	add(T data)
+{
+	T added = data + ".added";
+	std::cout << data << " . ";
+} 
+
+template<typename T>
+void	iter(T *addTab, int sizeTab, void f(const T &))
+{
+	for (int i = 0; i < sizeTab; i++)
+		f(addTab[i]);
+}
+
+template<typename T>
+void	iter(T *addTab, int sizeTab, void f(T &))
+{
+	for (int i = 0; i < sizeTab; i++)
+		f(addTab[i]);
 }
 
 #endif
