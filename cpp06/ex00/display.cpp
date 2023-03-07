@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 14:50:07 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/17 18:35:40 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:19:50 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,62 +64,60 @@ void	char_display(std::string param)
 	std::cout << MAGENTA << "double: " << static_cast<double>(c) << WHITE << std::endl;
 }
 
-void	int_display(std::string param, double to_convert)
+void	int_display(std::string param)
 {
-	long nb = strtoll(param.c_str(), NULL, 10);
+	long	nb = strtol(param.data(), NULL, 10);
 	
-	if (to_convert < 32 || to_convert > 126)
+	if (nb < 32 || nb > 126)
 		std::cout << BLOOD_RED << "char: Non displayable" << std::endl;
-	else if (to_convert < 0 || to_convert > 126)
+	else if (nb < 0 || nb > 126)
 		std::cout << BLOOD_RED << "char: impossible" << std::endl;
 	else
-		std::cout << CYAN <<  "char: '" << static_cast<char>(to_convert) << "'" << std::endl;
+		std::cout << CYAN <<  "char: '" << static_cast<char>(nb) << "'" << std::endl;
 	if (nb < INT_MIN || nb > INT_MAX)
 		std::cout << PARMA << "int: impossible" << std::endl;
 	else
-		std::cout << PARMA << "int: " << static_cast<int>(to_convert) << std::endl;
+		std::cout << PARMA << "int: " << nb << std::endl;
 	std::cout << std::fixed;
 	std::cout.precision(1);
-	std::cout << POOL_GREEN << "float: " << static_cast<float>(to_convert) << "f" << std::endl;
-	std::cout << MAGENTA << "double: " << static_cast<double>(to_convert) << WHITE << std::endl;
+	std::cout << POOL_GREEN << "float: " << static_cast<float>(nb) << "f" << std::endl;
+	std::cout << MAGENTA << "double: " << static_cast<double>(nb) << WHITE << std::endl;
 }
 
-void	float_display(std::string param, double to_convert)
+void	float_display(std::string param)
 {
-	long nb = strtoll(param.c_str(), NULL, 10);
+	float nb = strtof(param.data(), NULL);
 
-	if (to_convert < 32 || to_convert > 126)
+	if (nb < 32 || nb > 126)
 		std::cout << BLOOD_RED << "char: Non displayable" << std::endl;
-	else if (to_convert < 0 || to_convert > 126)
+	else if (nb < 0 || nb > 126)
 		std::cout << BLOOD_RED << "char: impossible" << std::endl;
 	else
-		std::cout << CYAN <<  "char: '" << static_cast<char>(to_convert) << "'" << std::endl;
+		std::cout << CYAN <<  "char: '" << static_cast<char>(nb) << "'" << std::endl;
 	if (nb < INT_MIN || nb > INT_MAX)
 		std::cout << PARMA << "int: impossible" << std::endl;
 	else
-		std::cout << PARMA << "int: " << static_cast<int>(to_convert) << std::endl;
+		std::cout << PARMA << "int: " << static_cast<int>(nb) << std::endl;
 	std::cout << std::fixed;
 	std::cout.precision(1);
-	std::cout << POOL_GREEN << "float: " << static_cast<float>(to_convert) << "f" << std::endl;
-	std::cout << MAGENTA << "double: " << static_cast<double>(to_convert) << WHITE << std::endl;
+	std::cout << POOL_GREEN << "float: " << nb << "f" << std::endl;
+	std::cout << MAGENTA << "double: " << static_cast<double>(nb) << WHITE << std::endl;
 }
 
-void	double_display(std::string param, double to_convert)
+void	double_display(std::string param)
 {
-	long nb = strtoll(param.c_str(), NULL, 10);
-
-		if (to_convert < 32 || to_convert > 126)
+	double nb = strtod(param.data(), NULL);
+	if (nb < 32 || nb > 126)
 		std::cout << BLOOD_RED << "char: Non displayable" << std::endl;
-	else if (to_convert < 0 || to_convert > 126)
+	else if (nb < 0 || nb > 126)
 		std::cout << BLOOD_RED << "char: impossible" << std::endl;
 	else
-		std::cout << CYAN <<  "char: '" << static_cast<char>(to_convert) << "'" << std::endl;
+		std::cout << CYAN <<  "char: '" << static_cast<char>(nb) << "'" << std::endl;
 	if (nb < INT_MIN || nb > INT_MAX)
 		std::cout << PARMA << "int: impossible" << std::endl;
 	else
-		std::cout << PARMA << "int: " << static_cast<int>(to_convert) << std::endl;
-	std::cout << std::fixed;
-	std::cout.precision(1);
-	std::cout << POOL_GREEN << "float: " << static_cast<float>(to_convert) << "f" << std::endl;
-	std::cout << MAGENTA << "double: " << to_convert << WHITE << std::endl;
+		std::cout << PARMA << "int: " << static_cast<int>(nb) << std::endl;
+	std::cout << std::fixed << std::setprecision(1);
+	std::cout << POOL_GREEN << "float: " << static_cast<float>(nb) << "f" << std::endl;
+	std::cout << MAGENTA << "double: " << nb << WHITE << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 20:04:25 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/17 18:22:07 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:15:14 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@
 #define POWDERY_PINK    "\x1b[38;5;225m"
 
 #include <iostream>
+#include <iomanip>
 #include <limits.h>
 #include <string>
 #include <cstdlib>
+#include <sstream>
 
 ///////////////////////////////////////
 //*/ */ */ */    CHECKS   /* /* /* /*//
@@ -64,8 +66,8 @@ int	pars(const std::string param);
 
 bool	other_display(std::string param);
 void	char_display(std::string param);
-void	int_display(std::string param, double to_convert);
-void	float_display(std::string param, double to_convert);
-void	double_display(std::string param, double to_convert);
+void	int_display(std::string param);
+void	float_display(std::string param);
+void	double_display(std::string param);
 
 #endif
