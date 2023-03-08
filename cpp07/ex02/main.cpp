@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:57:30 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/03/08 18:20:07 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:32:14 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int main()
 {
     std::cout << MAGENTA << "\t\tPERSONNAL TESTS" << std::endl;
-    std::cout << std::endl << MAGENTA << "\t\tEmpty tab" << std::endl;
+    std::cout << std::endl << PASTEL_GREEN << "\t\tEmpty tab" << std::endl;
     try
     {
         Array<int>  intTab;
@@ -28,17 +28,7 @@ int main()
         std::cerr << BLOOD_RED << e.what() << std::endl;
     }
 
-    try
-    {
-        int * a = new int();
-        std::cout << PARMA << *a << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << BLOOD_RED << e.what() << std::endl;
-    }
-
-    std::cout << std::endl << MAGENTA << "\t\tString tab test" << std::endl;
+    std::cout << std::endl << PASTEL_GREEN << "\t\tString tab test" << std::endl;
     try
     {
         Array<std::string>  stringTab(5);
@@ -56,7 +46,7 @@ int main()
         std::cerr << BLOOD_RED << e.what() << std::endl;
     }
     
-    std::cout << std::endl << MAGENTA << "\t\tChar tab & construction by copy test" << std::endl;
+    std::cout << std::endl << PASTEL_GREEN << "\t\tChar tab & construction by copy test" << std::endl;
     try
     {
         Array<char> charTab(10);
@@ -70,9 +60,11 @@ int main()
             std::cout << PASTEL_PINK << "charTab[" << i << "] = " << charTab[i] << std::endl;
             std::cout << PURPLE << "charTabCpy[" << i << "] = " << charTabCpy[i] << std::endl << std::endl;
         }
+        std::cout << "-------------------------------" << std::endl;
         charTab[0] = 'A';
         std::cout << PASTEL_PINK << "charTab[0] = " << charTab[0] << std::endl;
         std::cout << PURPLE << "charTabCpy[0] = " << charTabCpy[0] << std::endl << std::endl;
+        std::cout << "-------------------------------" << std::endl;
         charTabCpy[0] = 'Z';
         std::cout << PASTEL_PINK << "charTab[0] = " << charTab[0] << std::endl;
         std::cout << PURPLE << "charTabCpy[0] = " << charTabCpy[0] << std::endl << std::endl;
@@ -82,7 +74,7 @@ int main()
         std::cerr << BLOOD_RED << e.what() << std::endl;
     }
     
-    std::cout << MAGENTA << std::endl << "\t\tSUBJECT TESTS" << std::endl;
+    std::cout << PASTEL_GREEN << std::endl << "\t\tSUBJECT TESTS" << std::endl;
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));

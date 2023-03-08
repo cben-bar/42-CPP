@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:24:13 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/03/07 16:39:33 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:36:58 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int main()
 	std::string			stringTab[6] = {"abc", "ABC", "ahbece", "H2G2", "4", "NULL"};
 
 	std::cout << CYAN << "CHAR TAB" << std::endl << std::endl;
-	std::cout << "const print ==>  ";
+	std::cout << "print ==>  ";
 	iter(charTab, 6, print);
 	std::cout <<  std::endl << std::endl;
 
 	std::cout << SUN << "INT TAB" << std::endl << std::endl;
-	std::cout << "const print ==>  ";
+	std::cout << "print ==>  ";
 	iter(intTab, 6, print);
 	std::cout << std::endl << "plus ==>  ";
 	iter(intTab, 6, plus);
@@ -32,7 +32,7 @@ int main()
 	std::cout << std::endl << std::endl;
 
 	std::cout << POOL_GREEN << "STRING TAB" << std::endl << std::endl;
-	std::cout << "const print ==>  ";
+	std::cout << "print ==>  ";
 	iter(stringTab, 6, print);
 	std::cout << std::endl << WHITE;
 

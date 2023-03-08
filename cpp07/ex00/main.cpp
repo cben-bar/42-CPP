@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:03:38 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/02/20 19:25:58 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:34:41 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main()
 	std::cout << PASTEL_GREEN <<"fc: " << fc << std::endl;
 	std::cout << PASTEL_YELLOW <<"fk: " << fk << std::endl;
 
-	std::cout << YELLOW << "\t\tSUBJECT TEST" << std::endl;
+	std::cout << YELLOW << "\t\tSUBJECT TEST" << std::endl << TAN;
 	int a = 2;
 	int b = 3;
 	::swap( a, b);
