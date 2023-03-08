@@ -6,7 +6,7 @@
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/03/07 18:21:18 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/03/08 16:04:46 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ NAME		=	Array
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	Array.hpp		\
+INCLUDES	=	Array.tpp		\
+				Array.hpp
 
 SRC			=	main.cpp		\
-				Array.tpp		\
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
