@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:57:30 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/03/08 19:32:14 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:41:18 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int main()
         std::cerr << BLOOD_RED << e.what() << std::endl;
     }
     
-    std::cout << PASTEL_GREEN << std::endl << "\t\tSUBJECT TESTS" << std::endl;
+    std::cout << MAGENTA << std::endl << "\t\tSUBJECT TESTS" << std::endl;
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
