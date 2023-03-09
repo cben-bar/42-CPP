@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 17:59:16 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/03/09 19:22:01 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/03/09 16:54:33 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/03/09 20:36:31 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-#define ARRAY_HPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
 #include <iostream>
+#include <exception>
+#include <vector>
 #include <cstdlib>
+#include <algorithm>
+#include <climits>
 
 ///////////////////////////////////////
 //*/ */ */ */    COLORS   /* /* /* /*//
@@ -49,34 +53,40 @@
 #define VIOLET          "\x1b[38;5;129m"
 #define POWDERY_PINK    "\x1b[38;5;225m"
 
-///////////////////////////////////////
-//*/ */ */ */   TEMPLATE  /* /* /* /*//
-///////////////////////////////////////
-
-template <typename T>
-class Array
+class Span
 {
 	public:
-		Array();
-		Array(unsigned int n);
-		Array(const Array &origin);
-		Array &operator=(const Array<T> &origin);
-		~Array();
+		Span();
+		Span(unsigned int n);
+		Span(const Span &origin);
+		Span &operator=(const Span &origin);
+		~Span();
 
-		T & operator[](unsigned int i);
-		T const  & operator[](unsigned int i);
+		void	addNumber(int n);
+		void	addNumber();
+		int	shortestSpan();
+		int	longestSpan();
 
-		unsigned int size() const;
+		unsigned int getNElements() const;
+		unsigned int getPlaces() const;
+		int getValue(unsigned int) const;
 
-		class indexOut : public std::exception
+		class ElementFull : public std::exception
 		{
-			public:
-				virtual const char *what() const throw();
+			virtual const char *what() const throw();
+		};
+
+		class MissingElement : public std::exception
+		{
+			virtual const char *what() const throw();
 		};
 
 	private:
-		unsigned int	_size;
-		T*				_cel;
+		unsigned int		_nElements;
+		unsigned int		_place;
+		std::vector<int>	_array;
 };
+
+std::ostream & operator<<(std::ostream &o, const Span &rhs);
 
 #endif

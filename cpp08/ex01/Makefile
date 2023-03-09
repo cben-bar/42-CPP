@@ -6,7 +6,7 @@
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/03/09 16:23:09 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/03/09 19:38:05 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,10 @@ NAME		=	Span
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	Span.hpp
+INCLUDES	=	Span.hpp	\
 
-SRC			=	main.cpp
+SRC			=	main.cpp	\
+				Span.cpp
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 

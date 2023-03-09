@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:59:16 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/03/08 18:08:55 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:22:33 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,13 @@ T &Array<T>::operator[](unsigned int i)
 	return (_cel[i]);
 }
 
+template<typename T>
+T const &Array<T>::operator[](unsigned int i)
+{
+	if (i >= this->_size)
+		throw indexOut();
+	return (_cel[i]);
+} 
 ///////////////////////////////////////
 //*/ */ */ */  DESTRUCTOR /* /* /* /*//
 ///////////////////////////////////////
