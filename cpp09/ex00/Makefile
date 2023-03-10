@@ -6,18 +6,18 @@
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/03/10 14:58:01 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/03/10 15:13:28 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Bitcoin_exchange
+NAME		=	btc
 
 DIR_OBJS	=	./.OBJS/
 
-INCLUDES	=	Bitcoin_exchange.hpp
+INCLUDES	=	BitcoinExchange.hpp
 
 SRC			=	main.cpp				\
-				Bitcoin_exchange.cpp
+				BitcoinExchange.cpp
 
 OBJS		=	$(addprefix $(DIR_OBJS), $(SRC:.cpp=.o))
 
