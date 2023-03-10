@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:05:33 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/03/09 20:36:10 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:32:45 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,15 @@ Span	&Span::operator=(const Span &origin)
 {
 	if (this == &origin)
 		return (*this);
-	_nElements = origin.getNElements();
+	_nElements = origin._nElements;
 	_array = origin._array;
 	return (*this);
 }
 
 std::ostream&	operator<<(std::ostream &o, Span const &rhs)
 {
-	unsigned int i = -1;
 
-	while (++i < rhs.getPlaces())
+	for (unsigned int i = 0; i < rhs.getPlaces(); i++)
 	{
 		if (i == rhs.getPlaces() - 1)
 			o << rhs.getValue(i);
@@ -115,46 +114,43 @@ void	Span::addNumber()
 	srand(time(NULL));
 	_array.assign(_place, 0);
 	std::generate(_array.begin(), _array.end(), randomNumber);
+	_nElements = _array.size();
 }
 
 int	Span::shortestSpan()
 {
-	int					diff = INT_MAX;
+	int					shortestSpan = INT_MAX;
 	int					tempDiff = 0;
-	unsigned int		i = -1;
-	std::vector<int>	tempVector = this->_array;
+	std::vector<int>	tmpV = this->_array;
 
 	if (this->_place <= 1)
 		throw MissingElement();
 
-	sort(tempVector.begin(), tempVector.end(), std::greater<int>());
+	sort(tmpV.begin(), tmpV.end(), std::greater<int>());
 
-	while(++i < this->_place - 1)
+	for (unsigned int i = 0; i < this->_place - 1; i++)
 	{
-		if(tempVector.at(i) > tempVector.at(i + 1))
-			tempDiff = tempVector.at(i) - tempVector.at(i + 1);
+		if(tmpV.at(i) > tmpV.at(i + 1))
+			tempDiff = tmpV.at(i) - tmpV.at(i + 1);
 		else
-			tempDiff = tempVector.at(i + 1) - tempVector.at(i);
+			tempDiff = tmpV.at(i + 1) - tmpV.at(i);
 
-		if(tempDiff < diff)
-			diff = tempDiff;
+		if(tempDiff < shortestSpan)
+			shortestSpan = tempDiff;
 	}
 
-	return (diff);
+	return (shortestSpan);
 }
 
 int	Span::longestSpan()
 {
-	std::vector<int>	tempVector = this->_array;
 	int					longestSpan = 0;
-
-	if (this->_place <= 1)
+	std::vector<int>	tmpV = this->_array;
+	if (this->_place <= 1 || this->_nElements < 2)
 		throw MissingElement();
 
-	sort(tempVector.begin(), tempVector.end(), std::greater<int>());
-
-	longestSpan = tempVector.front() - tempVector.back();
-
+	sort(tmpV.begin(), tmpV.end(), std::greater<int>());
+	longestSpan = tmpV.front() - tmpV.back();
 	return (longestSpan);
 }
 
