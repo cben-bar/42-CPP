@@ -65,3 +65,7 @@ EXEMPLE:
 8		2012-01-11 => 1 = 1						1*1
 9		Error: too large a number.				(2147483648 est une valeur hors fourchette autorisee(entre 0 et 1000))
 ====================================================================================
+
+
+
+dans std::map chercher fonction lower truc pr aller a la cle precedante
