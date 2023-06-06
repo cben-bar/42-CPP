@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:09:38 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/03/10 15:19:11 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:00:01 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,20 @@ int main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		std::cout << "This programe takes a file as argument." << std::endl;
+		std::cout << SUN << "This programe takes a file as argument." << std::endl;
 		return (0);
 	}
-	std::string	arg = av[1];
-	std::cout << arg << std::endl;
+	std::ifstream file(av[1]);
+	if (!file)
+	{
+		std::cerr << SUN << "Error opening file." << std::endl;
+		file.close();
+		return (1);
+	}
+	std::string line;
+	while (std::getline(file, line, '|'))
+	{
+		
+	}
 	return (0);
 }
