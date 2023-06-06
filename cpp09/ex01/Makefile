@@ -6,11 +6,11 @@
 #    By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 18:10:59 by cben-bar          #+#    #+#              #
-#    Updated: 2023/03/10 14:58:56 by cben-bar         ###   ########.fr        #
+#    Updated: 2023/03/15 14:08:17 by cben-bar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Reverse_Polish_Notation
+NAME		=	RPN
 
 DIR_OBJS	=	./.OBJS/
 
