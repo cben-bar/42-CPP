@@ -69,3 +69,7 @@ EXEMPLE:
 
 
 dans std::map chercher fonction lower truc pr aller a la cle precedante
+
+
+
+inputfile.find(" | ")     ======>espace, pipe, espace.

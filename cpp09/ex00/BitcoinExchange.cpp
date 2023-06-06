@@ -6,11 +6,12 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:12:43 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/06 17:25:18 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/06 20:03:02 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
 
 ///////////////////////////////////////
 //*/ */ */ */   BOOLEANS  /* /* /* /*//
@@ -22,6 +23,29 @@ bool	isValidValue(float value)
 		return (FALSE);
 	return (TRUE);
 }
+
+bool	isValidLine(std::string line)
+{
+	if (line.find(" | ") != line.length())
+	{
+		std::cout << FLUO_GREEN << "Trier la date de la valeur =>" << line << std::endl << std::endl;
+		return(TRUE);
+	}
+	else
+		std::cout << POWDERY_PINK << "Error: bad input => " << line << std::endl << std::endl;
+	return (FALSE);
+}
+
+
+///////////////////////////////////////
+//*/ */ */ */      RUN    /* /* /* /*//
+///////////////////////////////////////
+
+void	run(std::string line, std::map<std::string, float>)
+{
+	std::cout << PASTEL_GREEN << "line =>" << line << "arrivee dans run()" << std::endl<< std::endl << WHITE;
+}
+
 
 ///////////////////////////////////////
 //*/ */ */ */    DEBUG    /* /* /* /*//
