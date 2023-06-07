@@ -73,3 +73,4 @@ dans std::map chercher fonction lower truc pr aller a la cle precedante
 
 
 inputfile.find(" | ")     ======>espace, pipe, espace.
+le pipe doit etre a la 11em eposition
