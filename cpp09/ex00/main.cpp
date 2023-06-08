@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:09:38 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/07 19:59:19 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/08 14:05:16 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int ac, char **av)
     while (getline(inputFile, inputLine))
 	{
         // std::cout << PASTEL_YELLOW << "inputLine ==>" << inputLine << std::endl;
-        if (exchange.isValidLine(inputLine))
+        if (exchange.isLineToParse(inputLine))
             exchange.run(inputLine, exchange.getDataMap());
     }
     inputFile.close();

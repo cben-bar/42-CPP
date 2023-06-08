@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:08:04 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/07 19:54:41 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/08 18:11:35 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <sstream>
 #include <string>
 #include <map>
+#include <cctype>
+#include <algorithm>
 
 ///////////////////////////////////////
 //*/ */ */ */    COLORS   /* /* /* /*//
@@ -79,10 +81,12 @@ class BitcoinExchange
 	//*/ */ */ */   BOOLEANS  /* /* /* /*//
 	///////////////////////////////////////
 
-		bool	isValidLine(std::string line);
+		bool	isLineToParse(std::string line);
 		bool	isValidValue(float value);
+		bool	isValidYear(std::string line);
+		bool	isValidMonth(std::string line);
+		bool	isValidDay(std::string line);
 		bool	isValidDate(std::string line);
-		bool	isValidDateFormat(std::string line);
 
 	///////////////////////////////////////
 	//*/ */ */ */   FUNCTION  /* /* /* /*//
