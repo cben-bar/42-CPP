@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:12:43 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/08 18:43:07 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/09 15:56:51 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,24 +211,63 @@ bool	BitcoinExchange::isValidDate(std::string line)
 	int dateInt = std::atoi(dateStr.c_str());
 	if (dateInt < 20090103)
 	{
-		std::cout << YELLOW << "Error: bad input, Bitcoin was created on January 3, 2009 => " << line << std::endl;
+		std::cout << PARMA << "Error: bad input, Bitcoin was created on January 3, 2009 => " << line << std::endl;
 		return (FALSE);
 	}
 	if (dateInt > 20230615) //a set au jour de la correc
 	{
-		std::cout << YELLOW << "Error: bad input, I'm not a diviner => " << line << std::endl;
+		std::cout << PARMA << "Error: bad input, I'm not a diviner => " << line << std::endl;
+		return (FALSE);
+	}
+	// std::string	yearStr(line.substr(0, 4));
+	// int yearInt = std::atoi(yearStr.c_str());
+
+	// std::string	monthStr;
+	// if (line[5] == '0')
+	// 	monthStr = line.substr(6, 1);
+	// else
+	// 	monthStr = line.substr(5, 2);
+	// int monthInt = std::atoi(monthStr.c_str());
+	
+	// std::string dayStr;
+	// if (line[8] == '0')
+	// 	dayStr = line.substr(9, 1);
+	// else
+	// 	dayStr = line.substr(8, 2);
+	// int dayInt = std::atoi(dayStr.c_str());
+
+	// std::cout << YELLOW << "yearInt =>" << yearInt << "\tyearStr =>" << yearStr << " ==>" << line << std::endl;
+	// std::cout << YELLOW << "monthInt =>" << yearInt << "\tmonthStr =>" << monthStr << " ==>" << line << std::endl;
+	// std::cout << YELLOW << "dayInt =>" << yearInt << "\tdayStr =>" << dayStr << " ==>" << line << std::endl;
+
+	// if (monthInt == 2)
+    // {
+	// 	std::cout << FLUO_GREEN << "in check bisextile year ==>" << dayInt << " " << monthInt << " " << yearInt << " " << std::endl;
+    //     bool isLeapYear = (yearInt % 4 == 0 && yearInt % 100 != 0) || (yearInt % 400 == 0);
+    //     if ((isLeapYear && dayInt > 29))
+    //     {
+	// 		std::cout << PASTEL_YELLOW << "The year " << yearStr << " was a leap year, there is no corresponding date in February." << std::endl;
+	// 	    return false;
+	// 	}
+    // }	
+	return (TRUE);
+}
+
+bool	BitcoinExchange::isValidValue(std::string line)
+{
+	float value = static_cast<float>(std::atof(line.substr(12, line.length()).c_str()));
+	if (value < 0)
+	{
+		std::cout << PARMA << "Error: not a positive number." << std::endl;
+		return (FALSE);
+	}
+	if( value > 1000)
+	{
+		std::cout << PARMA << "Error: too large a number." << std::endl;
 		return (FALSE);
 	}
 	return (TRUE);
 }
-
-bool	BitcoinExchange::isValidValue(float value)
-{
-	if (value < 0 || value > 1000)
-		return (FALSE);
-	return (TRUE);
-}
-
 
 
 ///////////////////////////////////////
@@ -237,8 +276,6 @@ bool	BitcoinExchange::isValidValue(float value)
 
 void	BitcoinExchange::run(std::string line, std::map<std::string, float> dataMap)
 {
-	(void)dataMap;
-	// float pouet = 44.3;
 	// std::cout << PASTEL_GREEN << "arrivee dans run() ==>" << line << std::endl<< std::endl << WHITE;
 	if (!isValidYear(line))
 		return;
@@ -248,18 +285,29 @@ void	BitcoinExchange::run(std::string line, std::map<std::string, float> dataMap
 		return;
 	if (!isValidDate(line))
 		return;
-	// if (!isValidValue(line))
-	// if (!isValidValue(pouet))
-	// 	return;
-	// else
-	// 	convert(line, dataMap);
+	if (!isValidValue(line))
+		return;
+	convert(line, dataMap);
 	return;
 }
 
-// void	BitcoinExchange::convert(std::line, std::map<std::string, float> dataMap)
-// {
-	// TODO
-// }
+void	BitcoinExchange::convert(std::string line, std::map<std::string, float> dataMap)
+{
+	(void)dataMap;
+	float value = static_cast<float>(std::atof(line.substr(12, line.length()).c_str()));
+	std::string input(line.substr(12, line.length()));
+	std::string key(line.substr(0, 10));
+	// std::cout << YELLOW << "in convert float ==>" << value << "\tkey ==>" << key << "imput =>" << input << std::endl;
+	for (std::map<std::string, float>::const_iterator it = dataMap.begin(); it != dataMap.end(); ++it)
+	{
+		if (it->first == key)
+			std::cout << SEA_GREEN << key << " => " << input << " = " << it->second * value << std::endl;
+		else
+		{
+			
+		}
+	}
+}
 
 
 ///////////////////////////////////////

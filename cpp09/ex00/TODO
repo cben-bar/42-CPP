@@ -1,1 +1,88 @@
+Le programme prends un fichier en argument. (a ouvir donc, verif droit de lecture)
+
+il comprend, sur chaque ligne les infos au format: date | valeur
+
+Une date valide est au format Annee-mois-jour
+Une valeur valide doit être soit un flottant, soit un entier positif compris entre 0 et 1000
+						==> 2023-06-30
+
+Utiliser au moins un conteneur, gerer les erreurs possible avec un message d'erreur clair.
+
+Votre programme doit afficher sur la sortie standard le résultat de la valeur multipliée
+par le taux de change selon la date indiquée dans votre base de données.
+
+Si la date utilisée dans l'entrée n'existe pas dans votre BD alors vous
+doit utiliser la date la plus proche contenue dans votre BD. Veillez à utiliser le
+date inférieure et non supérieure.
+
+
+
+
+
+====================================================================================
+-utiliser les classes fstream et sstream de la bibliothèque standard C
+pour lire et analyser le fichier CSV.
+
+-stocker les donnees dans un conteneur tel que std::map ou std::unordered_map avec la date comme clef
+et le taux de change comme valeur.
+
+-lire le fichier ligne par ligne (avec stringstream par exemple)
+
+-si la ligne n'est pas valide, afficher un msg d'erreur.
+
+-calculer le resultat en multipliant la valeur du fichier d'entree par le taux de change,
+l'afficher sur la sortie standard.
+
+-ne pas oublier de refermer le file en lecture si le rogramme doit quitter apres une erreur
+
+
+====================================================================================
+EXEMPLE:
+
+
+	FICHIER D'ENTREE:								DATA.csv
+
+1		011-01-03 | 3								2011-01-03,1.04
+2		2011-01-03 | 2								2011-01-03,1.04
+3		2011-01-03 | 1								2011-01-03,1.89
+4		2011-01-03 | 1.2							2011-01-03,7.28
+5		2011-01-09 | 1								2011-01-09,6.5
+6		2012-01-11 | -1								2012-01-11,4.2
+7		2001-42-42
+8		2012-01-11 | 1								2012-01-11,1
+9		2012-01-11 | 2147483648
+
+
+		SORTIE STANDARD								{{CALCULS}}
+
+1		2011-01-03 => 3 = 3.03					3*1.04
+2		2011-01-03 => 2 = 2.08					2*1.04
+3		2011-01-03 => 1 = 1.89					1*1.89
+4		2011-01-03 => 1.2 = 8.736				1.2*7.28
+5		2011-01-09 => 1 = 6.5					1*6.5
+6		Error: not a positive number.			(-1 est une valeur negative)
+7		Error: bad input => 2001-42-42			(2001-42-42 n'est pas un format de date valide)
+8		2012-01-11 => 1 = 1						1*1
+9		Error: too large a number.				(2147483648 est une valeur hors fourchette autorisee(entre 0 et 1000))
+====================================================================================
+
+
+
+dans std::map chercher fonction lower truc pr aller a la cle precedante
+
+
+
+inputfile.find(" | ")     ======>espace, pipe, espace.
+le pipe doit etre a la 11em eposition
+
+
+
 check anne bisextile
+
+
+
+modif date au jour de la correction dans isValidDate().
+
+
+Une année bissextile est une année comportant 366 jours au lieu des 365 pour une année commune.
+Le jour ajouté est le 29 février car ce mois compte habituellement vingt-huit jours dans le calendrier grégorien.
