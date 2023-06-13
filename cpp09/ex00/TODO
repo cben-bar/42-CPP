@@ -86,3 +86,7 @@ modif date au jour de la correction dans isValidDate().
 
 Une année bissextile est une année comportant 366 jours au lieu des 365 pour une année commune.
 Le jour ajouté est le 29 février car ce mois compte habituellement vingt-huit jours dans le calendrier grégorien.
+
+Creation du bitcoin = 3 janvier 2009
+
+annee bisextiles depuis la creation du bitcoin = 2012, 2016 et 2020

@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:12:43 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/09 15:56:51 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/13 19:08:14 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ bool	BitcoinExchange::isLineToParse(std::string line)
 		return (FALSE);
 	if (line[4] != '-' || line[7] != '-')
 	{
-		std::cout << PARMA << "Error: bad input => " << line << std::endl << std::endl;
+		std::cout << PARMA << "Error: bad input => " << line << std::endl;
 		return (FALSE);
 	}
 	int space = line.find(' ');
@@ -97,7 +97,7 @@ bool	BitcoinExchange::isLineToParse(std::string line)
 		{
 			if (line[i] == (' ') && i != 12)
 			{
-				std::cout << PARMA << "Error: bad input => " << line << std::endl << std::endl;
+				std::cout << PARMA << "Error: bad input => " << line << std::endl;
 				return (FALSE);
 			}
 		}
@@ -111,7 +111,7 @@ bool	BitcoinExchange::isLineToParse(std::string line)
 	if (p == 11)
 		return(TRUE);
 	else
-		std::cout << PARMA << "Error: bad input => " << line << std::endl << std::endl;
+		std::cout << PARMA << "Error: bad input => " << line << std::endl;
 	return (FALSE);
 }
 
@@ -131,12 +131,12 @@ bool	BitcoinExchange::isValidYear(std::string line)
 	int yearInt = std::atoi(yearStr.c_str());
 	if (yearInt < 2009)
 	{
-		std::cout << PARMA << "Error: bad input, Bitcoin was created in 2009 => " << line << std::endl << std::endl;
+		std::cout << PARMA << "Error: bad input, Bitcoin was created in 2009 => " << line << std::endl;
 		return (FALSE);
 	}
 	if (yearInt > 2023)
 	{
-		std::cout << PARMA << "Error: bad input, I'm not a diviner => " << line << std::endl << std::endl;
+		std::cout << PARMA << "Error: bad input, I'm not a diviner => " << line << std::endl;
 		return (FALSE);
 	}
 	return (TRUE);
@@ -162,12 +162,12 @@ bool	BitcoinExchange::isValidMonth(std::string line)
 	int monthInt = std::atoi(monthStr.c_str());
 	if (monthInt < 1)
 	{
-		std::cout << PARMA << "Error: bad input, not a valid month => " << line << std::endl << std::endl;
+		std::cout << PARMA << "Error: bad input, not a valid month => " << line << std::endl;
 		return(FALSE);
 	}
 	if (monthInt > 12)
 	{
-		std::cout << PARMA << "Error: bad input, not a valid month => " << line << std::endl << std::endl;
+		std::cout << PARMA << "Error: bad input, not a valid month => " << line << std::endl;
 		return(FALSE);
 	}
 	return (TRUE);
@@ -219,37 +219,46 @@ bool	BitcoinExchange::isValidDate(std::string line)
 		std::cout << PARMA << "Error: bad input, I'm not a diviner => " << line << std::endl;
 		return (FALSE);
 	}
-	// std::string	yearStr(line.substr(0, 4));
-	// int yearInt = std::atoi(yearStr.c_str());
+	std::string	yearStr(line.substr(0, 4));
+	int yearInt = std::atoi(yearStr.c_str());
 
-	// std::string	monthStr;
-	// if (line[5] == '0')
-	// 	monthStr = line.substr(6, 1);
-	// else
-	// 	monthStr = line.substr(5, 2);
-	// int monthInt = std::atoi(monthStr.c_str());
+	std::string	monthStr;
+	if (line[5] == '0')
+		monthStr = line.substr(6, 1);
+	else
+		monthStr = line.substr(5, 2);
+	int monthInt = std::atoi(monthStr.c_str());
 	
-	// std::string dayStr;
-	// if (line[8] == '0')
-	// 	dayStr = line.substr(9, 1);
-	// else
-	// 	dayStr = line.substr(8, 2);
-	// int dayInt = std::atoi(dayStr.c_str());
+	std::string dayStr;
+	if (line[8] == '0')
+		dayStr = line.substr(9, 1);
+	else
+		dayStr = line.substr(8, 2);
+	int dayInt = std::atoi(dayStr.c_str());
 
-	// std::cout << YELLOW << "yearInt =>" << yearInt << "\tyearStr =>" << yearStr << " ==>" << line << std::endl;
-	// std::cout << YELLOW << "monthInt =>" << yearInt << "\tmonthStr =>" << monthStr << " ==>" << line << std::endl;
-	// std::cout << YELLOW << "dayInt =>" << yearInt << "\tdayStr =>" << dayStr << " ==>" << line << std::endl;
 
-	// if (monthInt == 2)
-    // {
-	// 	std::cout << FLUO_GREEN << "in check bisextile year ==>" << dayInt << " " << monthInt << " " << yearInt << " " << std::endl;
-    //     bool isLeapYear = (yearInt % 4 == 0 && yearInt % 100 != 0) || (yearInt % 400 == 0);
-    //     if ((isLeapYear && dayInt > 29))
-    //     {
-	// 		std::cout << PASTEL_YELLOW << "The year " << yearStr << " was a leap year, there is no corresponding date in February." << std::endl;
-	// 	    return false;
-	// 	}
-    // }	
+	if (monthInt == 2)
+    {
+        bool isLeapYear = (yearInt % 4 == 0 && yearInt % 100 != 0) || (yearInt % 400 == 0);
+        if ((isLeapYear && dayInt > 29))
+        {
+			std::cout << PASTEL_PINK << "The year " << yearStr << " was a leap year, but there is no corresponding date in February => " << line << std::endl;
+		    return (FALSE);
+		}
+		else if (!isLeapYear && dayInt > 28)
+		{
+			std::cout << PASTEL_PINK << "The year " << yearInt << " was not a leap year, so there is no corresponding date in February => " << line << std::endl;
+		    return (FALSE);
+		}
+    }
+	if (monthInt == 4 || monthInt == 6 || monthInt == 9 || monthInt == 11)
+	{
+		if (dayInt > 30)
+		{
+			std::cout << PARMA << "Error: bad input => " << line << std::endl;
+			return (FALSE);
+		}
+	}
 	return (TRUE);
 }
 
@@ -276,7 +285,6 @@ bool	BitcoinExchange::isValidValue(std::string line)
 
 void	BitcoinExchange::run(std::string line, std::map<std::string, float> dataMap)
 {
-	// std::cout << PASTEL_GREEN << "arrivee dans run() ==>" << line << std::endl<< std::endl << WHITE;
 	if (!isValidYear(line))
 		return;
 	if (!isValidMonth(line))
@@ -290,25 +298,27 @@ void	BitcoinExchange::run(std::string line, std::map<std::string, float> dataMap
 	convert(line, dataMap);
 	return;
 }
-
-void	BitcoinExchange::convert(std::string line, std::map<std::string, float> dataMap)
+void BitcoinExchange::convert(std::string line, std::map<std::string, float> dataMap)
 {
-	(void)dataMap;
-	float value = static_cast<float>(std::atof(line.substr(12, line.length()).c_str()));
-	std::string input(line.substr(12, line.length()));
-	std::string key(line.substr(0, 10));
-	// std::cout << YELLOW << "in convert float ==>" << value << "\tkey ==>" << key << "imput =>" << input << std::endl;
-	for (std::map<std::string, float>::const_iterator it = dataMap.begin(); it != dataMap.end(); ++it)
-	{
-		if (it->first == key)
-			std::cout << SEA_GREEN << key << " => " << input << " = " << it->second * value << std::endl;
-		else
-		{
-			
-		}
-	}
-}
+    float value = static_cast<float>(std::atof(line.substr(12, line.length()).c_str()));
+    std::string input(line.substr(12, line.length()));
+    std::string key(line.substr(0, 10));
 
+    std::map<std::string, float>::const_iterator it = dataMap.find(key);
+    if (it != dataMap.end())
+	{
+        std::cout << POOL_GREEN << key << " => " << input << " = " << it->second * value << std::endl;
+    }
+	else
+	{
+        std::map<std::string, float>::iterator itl = dataMap.lower_bound(key);
+        if (itl != dataMap.begin())
+		{
+            --itl;
+            std::cout << SEA_GREEN << key << " => " << input << " = " << itl->second * value << std::endl;
+        }
+    }
+}
 
 ///////////////////////////////////////
 //*/ */ */ */    DEBUG    /* /* /* /*//

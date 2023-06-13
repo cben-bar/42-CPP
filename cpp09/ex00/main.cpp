@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:09:38 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/08 14:05:16 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/13 20:14:04 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,33 @@
 
 int main(int ac, char **av)
 {
-	if (ac != 2)
+	if (ac < 2)
 	{
 		std::cout << SUN << "This programe takes a file as argument." << std::endl;
 		return (0);
 	}
+    int i = ac;
+    int j = 1;
+    std::cout << "ac ==>" << ac << std::endl;
+    std::cout << "i ==>" << i << std::endl;
     BitcoinExchange exchange;
 
-    std::ifstream inputFile(av[1]);
-    if (inputFile.is_open() == FALSE)
-	{
-        std::cerr << SUN << "Error opening file." << std::endl;
-        return (1);
+    while (j != i)
+    {
+        std::ifstream inputFile(av[j]);
+        if (inputFile.is_open() == FALSE)
+        {
+            std::cerr << SUN << "Error opening file." << std::endl;
+            return (1);
+        }
+        std::string inputLine;
+        while (getline(inputFile, inputLine))
+        {
+            if (exchange.isLineToParse(inputLine))
+                exchange.run(inputLine, exchange.getDataMap());
+        }
+        inputFile.close();
+        j++;
     }
-    std::string inputLine;
-    while (getline(inputFile, inputLine))
-	{
-        // std::cout << PASTEL_YELLOW << "inputLine ==>" << inputLine << std::endl;
-        if (exchange.isLineToParse(inputLine))
-            exchange.run(inputLine, exchange.getDataMap());
-    }
-    inputFile.close();
     return 0;
 }
