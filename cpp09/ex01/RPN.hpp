@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 14:09:12 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/14 16:02:20 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/14 22:36:01 by beni             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,11 @@ class RPN
 	//*/ */ */ */   METHODS   /* /* /* /*//
 	///////////////////////////////////////
 
-	void	run(std::string input, RPN calculator);
+	void	run(std::string input);
 	void	cleanStack(std::stack<int>lifo);
-	bool	reverseCalcul(char token, std::stack<int> lifo);
+	bool	reverseCalcul(int token, std::stack<int> &lifo);
 
-	void	printStack(std::stack<int>& lifo);
+	void	printStack(std::stack<int> &lifo);
 };
 
 
