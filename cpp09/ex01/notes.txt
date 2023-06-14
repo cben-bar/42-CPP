@@ -19,3 +19,7 @@ Vous n'avez pas besoin de gérer les parenthèses ou les nombres décimaux.
 Avertissement : Le(s) conteneur(s) que vous avez utilisé dans l'exercice précédent sont
 interdit ici. Le(s) contenant(s) que vous avez utilisé pour valider cet exercice
 ne sera pas utilisable pour le reste de ce module.
+
+
+Une RPN (notation polonaise inverse) ne peut pas se terminer par un chiffre sans être suivie d'un symbole opérateur.
+La RPN est une méthode de notation mathématique où les opérateurs (+, -, *, /, etc.) sont placés après les nombres sur lesquels ils opèrent.

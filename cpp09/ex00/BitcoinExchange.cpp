@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:12:43 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/14 11:46:50 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/14 13:05:38 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ BitcoinExchange::BitcoinExchange()
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &origin)
 {
 	*this = origin;
+	return ;
 }
 
 BitcoinExchange	&BitcoinExchange::operator=(const BitcoinExchange &origin)

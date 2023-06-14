@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 14:09:12 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/14 12:04:20 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:02:20 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #define RPN_HPP
 
 #include <stack>
+#include <cstdlib>
 #include <iostream>
+#include <string>
 
 ///////////////////////////////////////
 //*/ */ */ */    COLORS   /* /* /* /*//
@@ -49,18 +51,10 @@
 #define VIOLET          "\x1b[38;5;129m"
 #define POWDERY_PINK    "\x1b[38;5;225m"
 
-
-///////////////////////////////////////
-//*/ */ */ */   DEFINE   /* /* /* /*//
-///////////////////////////////////////
-
-#define FALSE 0
-#define TRUE 1
-
 class RPN
 {
 	public:
-		RPN(std::string input);
+		RPN();
 		RPN(const RPN &origin);
 
 		RPN &operator=(const RPN &origin);
@@ -71,12 +65,15 @@ class RPN
 	//*/ */ */ */   GETTERS   /* /* /* /*//
 	///////////////////////////////////////
 
+	std::stack<int>	getStack() const;
+	int				getRes() const;
 
 	///////////////////////////////////////
 	//*/ */ */ */   BOOLEANS  /* /* /* /*//
 	///////////////////////////////////////
 
-
+	bool	isEmptyStack(std::stack<int>) const;
+	void	parse(std::string input, RPN calculator);
 
 	///////////////////////////////////////
 	//*/ */ */ */  FUNCTIONS  /* /* /* /*//
@@ -85,12 +82,20 @@ class RPN
 
 	private:
 		std::stack<int> _stack;
+		int				_res;
+
+
+
 
 	///////////////////////////////////////
 	//*/ */ */ */   METHODS   /* /* /* /*//
 	///////////////////////////////////////
 
+	void	run(std::string input, RPN calculator);
+	void	cleanStack(std::stack<int>lifo);
+	bool	reverseCalcul(char token, std::stack<int> lifo);
 
+	void	printStack(std::stack<int>& lifo);
 };
 
 
