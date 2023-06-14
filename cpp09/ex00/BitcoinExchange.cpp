@@ -6,14 +6,14 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:12:43 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/13 19:08:14 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:46:50 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
 ///////////////////////////////////////
-//*/ */ */ */ CONSTRUCTOR /* /* /* /*//
+//*/ */ */ */CONSTRUCTORS /* /* /* /*//
 ///////////////////////////////////////
 
 BitcoinExchange::BitcoinExchange()
@@ -63,7 +63,7 @@ BitcoinExchange::~BitcoinExchange()
 
 
 ///////////////////////////////////////
-//*/ */ */ */  GETTER /* /* /* /*//
+//*/ */ */ */    GETTER   /* /* /* /*//
 ///////////////////////////////////////
 
 std::map<std::string, float>	BitcoinExchange::getDataMap() const

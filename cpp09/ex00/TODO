@@ -90,3 +90,11 @@ Le jour ajouté est le 29 février car ce mois compte habituellement vingt-huit 
 Creation du bitcoin = 3 janvier 2009
 
 annee bisextiles depuis la creation du bitcoin = 2012, 2016 et 2020
+
+
+
+
+
+
+AVANT CORRECTION =================>>>>	-changer date dans isValidDate()
+										-recheck si plusieurs fichiers doivente etre supporter
