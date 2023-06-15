@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 14:09:12 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/15 17:20:59 by cben-bar         ###   ########.fr       */
+/*   Created: 2023/06/15 17:19:26 by cben-bar          #+#    #+#             */
+/*   Updated: 2023/06/15 19:29:43 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RPN_HPP
-#define RPN_HPP
+#ifndef PMERGEME_HPP
+#define PMERGEME_HPP
 
 ///////////////////////////////////////
 //*/ */ */ */   INCLUDES  /* /* /* /*//
 ///////////////////////////////////////
 
-#include <stack>
-#include <cstdlib>
 #include <iostream>
-#include <string>
+#include <limits.h>
+#include <algorithm>
+#include<list>
+#include<deque>
 
 ///////////////////////////////////////
 //*/ */ */ */    COLORS   /* /* /* /*//
@@ -55,39 +56,28 @@
 #define VIOLET          "\x1b[38;5;129m"
 #define POWDERY_PINK    "\x1b[38;5;225m"
 
-class RPN
+class PmergeMe
 {
 	public:
-		RPN();
-		RPN(const RPN &origin);
+		PmergeMe();
+		PmergeMe &operator=(const PmergeMe &origin);
+		~PmergeMe();
+		
+		bool	isValidInput(std::string input) const;
+		void	setDeque(int val);
+		void	setList(int val);
 
-		RPN &operator=(const RPN &origin);
+		void	run();
 
-		~RPN();
-
-	///////////////////////////////////////
-	//*/ */ */ */   GETTERS   /* /* /* /*//
-	///////////////////////////////////////
-
-	std::stack<int>	getStack() const;
-
-	///////////////////////////////////////
-	//*/ */ */ */  FUNCTIONS  /* /* /* /*//
-	///////////////////////////////////////
-
-	void	parse(std::string input, RPN calculator);
-
+		
 	private:
-		std::stack<int> _stack;
+		std::list<int>	_lst;
+		std::deque<int>	_deque;
 
-	///////////////////////////////////////
-	//*/ */ */ */   METHODS   /* /* /* /*//
-	///////////////////////////////////////
+	void	displayList(std::list<int> lst);
+	void	displayDeque(std::deque<int> deque);
+		
 
-	void	run(std::string input);
-	void	cleanStack(std::stack<int>lifo);
-	bool	reverseCalcul(int token, std::stack<int> &lifo);
-
-	void	printStack(std::stack<int> &lifo);
 };
-#endif
+
+# endif

@@ -1,0 +1,39 @@
+Vous devez créer un programme avec ces contraintes :
+• Le nom du programme est PmergeMe.
+• Votre programme doit être capable d'utiliser une suite d'entiers positifs comme argument.
+• Votre programme doit utiliser un algorithme de tri par fusion-insertion pour trier l'entier positif
+séquence.
+• Si une erreur survient pendant l'exécution du programme, un message d'erreur doit s'afficher
+sur la sortie standard.
+Vous devez utiliser au moins deux conteneurs différents dans votre code pour
+valider cet exercice. Votre programme doit pouvoir gérer au
+au moins 3000 nombres entiers différents.
+Il est fortement conseillé d'implémenter votre algorithme pour chaque conteneur
+et donc d'éviter d'utiliser une fonction générique.
+
+
+Voici quelques directives supplémentaires sur les informations que vous devez afficher ligne par ligne
+sur la sortie standard
+• Sur la première ligne vous devez afficher un texte explicite suivi du positif non trié
+suite d'entiers.
+• Sur la deuxième ligne vous devez afficher un texte explicite suivi du positif trié
+suite d'entiers.
+• Sur la troisième ligne vous devez afficher un texte explicite indiquant le temps utilisé par
+votre algorithme en spécifiant le premier conteneur utilisé pour trier l'entier positif
+séquence.
+• Sur la dernière ligne vous devez afficher un texte explicite indiquant le temps utilisé par
+votre algorithme en spécifiant le deuxième conteneur utilisé pour trier l'entier positif
+séquence.
+Le format d'affichage du temps utilisé pour effectuer votre tri
+est libre mais la précision choisie doit permettre de bien voir
+différence entre les deux contenants utilisés
+
+L'indication de l'heure est volontairement étrange dans cet exemple.
+Bien sûr, vous devez indiquer le temps utilisé pour effectuer tous vos
+opérations, à la fois la partie tri et la partie gestion des données.
+Avertissement : Le(s) conteneur(s) que vous avez utilisé dans les exercices précédents sont
+interdit ici.
+
+
+La gestion des erreurs liées aux doublons est laissée à votre
+discrétion.

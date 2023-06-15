@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beni <beni@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:17:24 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/14 22:49:49 by beni             ###   ########.fr       */
+/*   Updated: 2023/06/15 17:16:35 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ RPN	&RPN::operator=(const RPN &origin)
 	if (this == &origin)
 		return (*this);
 	this->_stack = origin._stack;
-	this->_res = origin._res;
 	return (*this);
 }
 
@@ -54,24 +53,23 @@ std::stack<int> RPN::getStack() const
 	return (this->_stack);
 }
 
-int	RPN::getRes() const
-{
-	return (this->_res);
-}
-
-///////////////////////////////////////
-//*/ */ */ */   BOOLEANS  /* /* /* /*//
-///////////////////////////////////////
-
-bool	RPN::isEmptyStack(std::stack<int> lifo) const
-{
-	if (lifo.empty())
-		return (true);
-	return (false);
-}
-
 void	RPN::parse(std::string input, RPN calculator)
 {
+	if(input.empty())
+	{
+		std::cout << PARMA << "Error: invalid input." << std::endl;
+		return;
+	}
+	
+	size_t idx = 0;
+	while (isspace(input[idx]))
+		idx++;
+	if (idx == input.length())
+	{
+		std::cout << PARMA << "Error: invalid input." << std::endl;
+		return ;
+	}
+	
 	for(int i = 0; input[i]; i++)
 	{
 		if (!isdigit(input[i]) && input[i] != '+' && input[i] != '-' && input[i] != '/' && input[i] != '*' && input[i] != ' ')
@@ -90,36 +88,36 @@ void	RPN::parse(std::string input, RPN calculator)
 
 bool	RPN::reverseCalcul(int token, std::stack<int> &lifo)
 {
-
-	std::cout << "in reverseCalcul, token ==> " << token << std::endl;
-	printStack(lifo);
-	int val = lifo.top();
+	if (this->_stack.size() < 2)
+		return false;
+	int lastTop = lifo.top();
 	lifo.pop();
-	std::cout << STORM_BLUE << "lifo.top =>" << val << std::endl;
 	switch (token)
 	{
-		case 42: //*
+		case '*':
 		{
-			int res = val * lifo.top();
-			lifo.push(res);
+			int res = lifo.top() * lastTop;
+			lifo.top() = res;
 			break;
 		}
-		case 43: //+
-		{
-			int res = val + lifo.top();
-			lifo.push(res);
+		case '+':
+		{	
+			int res = lifo.top() + lastTop;
+			lifo.top() = res;
 			break;
 		}
-		case 45: //-
+		case '-':
 		{
-			int res = val - lifo.top();
-			lifo.push(res);
+			int res = lifo.top() - lastTop;
+			lifo.top() = res;
 			break;
 		}
-		case 47: ///
+		case '/':
 		{
-			int res = val / lifo.top();
-			lifo.push(res);
+			if (lastTop == 0)
+				return false;
+			int res = lifo.top() / lastTop;
+			lifo.top() = res;
 			break;
 		}
 		default:
@@ -130,31 +128,30 @@ bool	RPN::reverseCalcul(int token, std::stack<int> &lifo)
 
 void	RPN::run(std::string input)
 {
-	std::cout << "input for fillstack & run =>" << input << std::endl;
 	int	i = 0;
 	while(input[i])
 	{
-		if (isdigit(input[i]))
-		{
-			std::cout << "in loop input[i] ==>" << input[i] << std::endl;
-			this->_stack.push(atoi(&input[i]));
-			i++;
-		}
 		if (input[i] == ' ')
 			i++;
-		if (input[i] == '+' || input[i] == '-' || input[i] == '/' || input[i] == '*')
+		else if (isdigit(input[i]))
 		{
-			int token = input[i];
-			if(reverseCalcul(token, this->_stack))
-				continue;
-			else
+			this->_stack.push(input[i] - 48);
+			i++;
+		}
+		else if (input[i] == '+' || input[i] == '-' || input[i] == '/' || input[i] == '*')
+		{
+			if(!reverseCalcul(input[i], this->_stack))
 			{
-				std::cout << "Error." << std::endl;
+				std::cout << PARMA << "Error." << std::endl;
 				return ;
 			}
 			i++;
 		}
 	}
+	if (this->_stack.size() == 1)
+		std::cout << MAGENTA << this->_stack.top() << std::endl;
+	else
+		std::cout << PARMA << "Error." << std::endl;
 }
 
 void	RPN::cleanStack(std::stack<int> lifo)
@@ -170,10 +167,10 @@ void	RPN::cleanStack(std::stack<int> lifo)
 void RPN::printStack(std::stack<int> &lifo)
 {
     std::stack<int> tempStack = lifo;
-	std::cout << "print" << std::endl;
+	std::cout << YELLOW << "print ==>";
     while (!tempStack.empty())
 	{
-        std::cout << tempStack.top() << " ";
+        std::cout << YELLOW << tempStack.top() << " ";
         tempStack.pop();
     }
     std::cout << std::endl;
