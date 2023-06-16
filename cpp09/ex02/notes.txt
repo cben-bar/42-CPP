@@ -37,3 +37,16 @@ interdit ici.
 
 La gestion des erreurs liées aux doublons est laissée à votre
 discrétion.
+
+
+
+List : Une liste est une structure de données doublement chaînée qui peut stocker des éléments de
+types différents. Contrairement au vector,
+l'insertion et la suppression d'éléments au milieu de la liste sont plus rapides,
+mais l'accès direct aux éléments est plus lent. La liste est utilisée lorsque vous devez
+insérer ou supprimer des éléments fréquemment dans le milieu de la structure de données.
+
+Queue : Une queue est une structure de données qui suit le principe du premier entré, premier sorti
+(FIFO). Elle permet l'insertion d'éléments à l'arrière et la suppression d'éléments à l'avant.
+Une queue est utilisée lorsque vous avez besoin de gérer des tâches ou des événements dans l'ordre
+d'arrivée.

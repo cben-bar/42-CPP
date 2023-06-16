@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:19:26 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/15 19:29:43 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/16 15:59:09 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,17 +67,21 @@ class PmergeMe
 		void	setDeque(int val);
 		void	setList(int val);
 
-		void	run();
+
+		std::deque<int> getDeque() const;
+		std::list<int> getList() const;
+
+		void			displayList(std::list<int> lst);
+		void			displayDeque(std::deque<int> deque);
+		
+		std::list<int>	mergeSort(const std::list<int>& input);
+		std::list<int>	mergeIt(const std::list<int>& left, const std::list<int>& right);
+
 
 		
 	private:
 		std::list<int>	_lst;
 		std::deque<int>	_deque;
-
-	void	displayList(std::list<int> lst);
-	void	displayDeque(std::deque<int> deque);
-		
-
 };
 
 # endif
