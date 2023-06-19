@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:19:26 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/16 15:59:09 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/19 17:16:07 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@
 #include <iostream>
 #include <limits.h>
 #include <algorithm>
+#include <sys/time.h>
 #include<list>
 #include<deque>
+#include <ctime>
 
 ///////////////////////////////////////
 //*/ */ */ */    COLORS   /* /* /* /*//
@@ -74,9 +76,12 @@ class PmergeMe
 		void			displayList(std::list<int> lst);
 		void			displayDeque(std::deque<int> deque);
 		
-		std::list<int>	mergeSort(const std::list<int>& input);
-		std::list<int>	mergeIt(const std::list<int>& left, const std::list<int>& right);
+		std::list<int>	mergeSortLst(const std::list<int>& input);
+		std::list<int>	mergeLst(const std::list<int>& left, const std::list<int>& right);
 
+
+		std::deque<int>	mergeSortDeque(std::deque<int>& deque, int left, int right);
+		std::deque<int> mergeDeque(std::deque<int>& deque, int left, int middle, int right);
 
 		
 	private:

@@ -50,3 +50,22 @@ Queue : Une queue est une structure de données qui suit le principe du premier 
 (FIFO). Elle permet l'insertion d'éléments à l'arrière et la suppression d'éléments à l'avant.
 Une queue est utilisée lorsque vous avez besoin de gérer des tâches ou des événements dans l'ordre
 d'arrivée.
+
+
+
+
+L'algorithme de tri par fusion-insertion est une combinaison des algorithmes de tri par fusion et de tri par insertion. Il utilise une approche hybride pour trier une liste d'éléments de manière efficace.
+
+Le fonctionnement de l'algorithme de tri par fusion-insertion est le suivant :
+
+Si la taille de la liste à trier est inférieure à une certaine valeur seuil, l'algorithme utilise le tri par insertion pour trier la liste. Le tri par insertion est un algorithme de tri simple et efficace pour de petites listes.
+
+Sinon, l'algorithme divise la liste en deux moitiés approximativement égales.
+
+Chacune des moitiés est ensuite triée récursivement en utilisant l'algorithme de tri par fusion-insertion.
+
+Une fois que les deux moitiés sont triées, l'algorithme fusionne les deux sous-listes triées en une seule liste triée. Cela est réalisé en comparant les éléments des deux sous-listes et en les fusionnant de manière ordonnée.
+
+L'algorithme de tri par fusion-insertion combine les avantages du tri par fusion et du tri par insertion. Le tri par fusion a une complexité temporelle de O(n log n) dans le pire des cas, tandis que le tri par insertion est plus efficace pour de petites listes avec une complexité temporelle de O(n^2) dans le pire des cas. En utilisant le tri par fusion pour les grandes parties de la liste et le tri par insertion pour les petites parties, l'algorithme de tri par fusion-insertion cherche à obtenir une meilleure performance globale.
+
+Il convient de noter que la valeur seuil utilisée pour déterminer quand passer du tri par insertion au tri par fusion peut varier en fonction de l'implémentation de l'algorithme.

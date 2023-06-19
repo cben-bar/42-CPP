@@ -6,7 +6,7 @@
 /*   By: cben-bar <cben-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:18:48 by cben-bar          #+#    #+#             */
-/*   Updated: 2023/06/16 16:01:50 by cben-bar         ###   ########.fr       */
+/*   Updated: 2023/06/19 17:34:27 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ std::list<int> PmergeMe::getList() const
 
 bool PmergeMe::isValidInput(std::string input) const
 {
-    long val = 0;
-    
     if(input.empty())
 	{
         std::cout << "Error: empty input" << std::endl;
@@ -72,14 +70,14 @@ bool PmergeMe::isValidInput(std::string input) const
     {
         if(!isdigit(input[i]))
 		{
-            std::cout << "Error: invalid input [pas digit]" << std::endl;
+            std::cout << "Error: invalid input" << std::endl;
             return false;
         }
     }
-    val = atol(input.c_str());
-    if(val < INT_MIN || val > INT_MAX)
+    long val = atol(input.c_str());
+    if(val < 0 || val > INT_MAX)
 	{
-        std::cout << "Error: invalid value [out of accepted range]" << std::endl;
+        std::cout << "Error: invalid value" << std::endl;
         return false;
     }
     return true;
@@ -95,7 +93,7 @@ void	PmergeMe::setDeque(int val)
 	this->_deque.push_back(val);
 }
 
-std::list<int> PmergeMe::mergeIt(const std::list<int>& left, const std::list<int>& right)
+std::list<int> PmergeMe::mergeLst(const std::list<int>& left, const std::list<int>& right)
 {
   std::list<int> result;
 
@@ -133,12 +131,10 @@ std::list<int> PmergeMe::mergeIt(const std::list<int>& left, const std::list<int
   return result;
 }
 
-std::list<int> PmergeMe::mergeSort(const std::list<int>& input)
+std::list<int> PmergeMe::mergeSortLst(const std::list<int>& input)
 {
   if (input.size() <= 1)
-  {
     return input;
-  }
 
   std::list<int> left, right;
   std::list<int>::const_iterator it = input.begin();
@@ -150,17 +146,80 @@ std::list<int> PmergeMe::mergeSort(const std::list<int>& input)
     ++it;
   }
 
-  for (size_t i = mid; i < input.size(); ++i)
+  while (it != input.end())
   {
     right.push_back(*it);
     ++it;
   }
 
-  left = mergeSort(left);
-  right = mergeSort(right);
+  left = mergeSortLst(left);
+  right = mergeSortLst(right);
 
-  return mergeIt(left, right);
+  this->_lst = mergeLst(left, right);
+  return (this->_lst);
+
 }
+
+std::deque<int> PmergeMe::mergeDeque(std::deque<int>& deque, int left, int middle, int right)
+{
+    int size1 = middle - left + 1;
+    int size2 = right - middle;
+
+    std::deque<int> leftDeque;
+    std::deque<int> rightDeque;
+
+    for (int i = 0; i < size1; i++)
+        leftDeque.push_back(deque[left + i]);
+    for (int j = 0; j < size2; j++)
+        rightDeque.push_back(deque[middle + 1 + j]);
+
+    int i = 0, j = 0, k = left;
+
+    while (i < size1 && j < size2)
+	{
+        if (leftDeque[i] <= rightDeque[j])
+		{
+            deque[k] = leftDeque[i];
+            i++;
+        }
+		else
+		{
+            deque[k] = rightDeque[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < size1)
+	{
+        deque[k] = leftDeque[i];
+        i++;
+        k++;
+    }
+
+    while (j < size2)
+	{
+        deque[k] = rightDeque[j];
+        j++;
+        k++;
+    }
+	return deque;
+}
+
+std::deque<int> PmergeMe::mergeSortDeque(std::deque<int>& deque, int left, int right)
+{
+    if (left < right)
+	{
+        int middle = left + (right - left) / 2;
+
+        mergeSortDeque(deque, left, middle);
+        mergeSortDeque(deque, middle + 1, right);
+
+        mergeDeque(deque, left, middle, right);
+    }
+	return deque;
+}
+
 
 ///////////////////////////////////////
 //*/ */ */ */    DEBUG    /* /* /* /*//
